@@ -31,7 +31,7 @@ Legal Stuff Regarding Your Pull Request
 We won't rip off your work. You retain copyright on any pull request you submit.
 
 However, by submitting a pull request, you affirm that the content within is solely your original work. 
-Content generated collaboratively with other individuals must be identified as such and content generated entirely by other individuals should not be included. 
+Content generated collaboratively with other individuals must be identified as such and content generated entirely by other individuals should **not** be included. 
 Failure to meet these guidelines may result in disqualification as an applicant.
 
 About the Company
@@ -45,15 +45,14 @@ Lastly, SparkFun is a staunch advocate of the open source movement, most recentl
 About the Engineering Department
 --------------------------------
 The engineering department designs open-source electronics for SparkFun. 
-We also create the code and supporting documentation for said products to enable our customers to create, hack, and explore the great wide world of embedded electronics. 
- 
- 
+We also create the code and supporting documentation to enable our customers to create, hack, and explore the great wide world of embedded electronics. 
+
 License Information
 -------------------
 Please review the LICENSE.md file for license information. 
 
 If you have any questions or concerns on licensing, please contact techsupport@sparkfun.com.
 
-Distributed as-is; no warrenty is given.
+Distributed as-is; no warranty is given.
 
 - Your friends at SparkFun.
