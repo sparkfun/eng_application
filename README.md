@@ -28,7 +28,7 @@ Legal Stuff Regarding Your Pull Request
 
 **No content from your pull request will be used by SparkFun Electronics for any purpose other than assessing the quality of a given applicant.**
 
-We won't rip off your code. You retain copyright on any pull request you submit.
+We won't rip off your work. You retain copyright on any pull request you submit.
 
 However, by submitting a pull request, you affirm that the content within is solely your original work. 
 Content generated collaboratively with other individuals must be identified as such and content generated entirely by other individuals should not be included. 
@@ -54,6 +54,6 @@ Please review the LICENSE.md file for license information.
 
 If you have any questions or concerns on licensing, please contact techsupport@sparkfun.com.
 
-Distributed as-is; no warranty is given.
+Distributed as-is; no warrenty is given.
 
 - Your friends at SparkFun.
