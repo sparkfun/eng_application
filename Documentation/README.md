@@ -9,7 +9,7 @@ Requirements
 -------------
 
 * Formatted in Markdown
-* One or more images/diagrams that are attributed properly
+* Images/diagrams that are attributed properly
 * Enough details for a beginner to successfully accomplish the task
 
 Additional points

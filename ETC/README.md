@@ -11,4 +11,4 @@ Let us get to know you a bit better. Please answer the following:
 
 4. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
 
-5. What would you like to focus on while working with the engineering team? 
+5. What topics would you like to focus on while working with the engineering team? 

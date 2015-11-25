@@ -10,7 +10,7 @@ Code samples from one of your personal projects is preferred, though the followi
 
 * Clean, consistently formatted code.
 * Documented well enough for a stranger to use/understand your code. 
-* Licensed/attributed properly as applicable. 
+* Licensed and attributed properly (as applicable). 
 
 Additional points
 ------------------
