@@ -47,6 +47,16 @@ About the Engineering Department
 The engineering department designs open-source electronics for SparkFun. 
 We also create the code and supporting documentation to enable our customers to create, hack, and explore the great wide world of embedded electronics. 
 
+Various tasks include:
+
+* Writing tutorials
+* Creating demo projects
+* Writing basic code examples for products
+* Writing code libraries for products
+* Designing 3D models or circuit diagrams for products
+* Revisions of older products
+* Maintaining and updating documentation and code
+
 License Information
 -------------------
 Please review the LICENSE.md file for license information. 

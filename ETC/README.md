@@ -7,8 +7,10 @@ Let us get to know you a bit better. Please answer the following:
 
 2. What is your ideal weekly schedule?
 
-3. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
+3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
-4. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
+4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
-5. What topics would you like to focus on while working with the engineering team? 
+5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
+
+6. What topics would you like to focus on while working with the engineering team? 
