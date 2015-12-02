@@ -44,12 +44,11 @@ Let us get to know you a bit better. Please answer the following:
   introductory ballet classes for about a year.  If we measured my
   linear elasticity using 
   [Young's modulus](https://en.wikipedia.org/wiki/Young%27s_modulus), I 
-  think that I started at the elacticity of
-  copper and moved down to the type of brass that is slightly more elastic.  
-  I have also been an aerial dance diletante for about ten
-  years. Though this is irrelevant to most life skills, it did allow me to 
-  lift 20 pound marine batteries by a single hand at one of my
-  old jobs.
+  think that I started at the elacticity of copper and moved down to the 
+  type of brass that is slightly more elastic.I have also been an aerial dance 
+  diletante for about ten years. Though this is irrelevant to most life skills,
+  it did allow me to lift 20 pound marine batteries by a single hand at one 
+  of my old jobs.
 
 **6. What topics would you like to focus on while working with the engineering team?** 
   
