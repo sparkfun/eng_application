@@ -25,4 +25,4 @@ Let us get to know you a bit better. Please answer the following:
 
 6. What topics would you like to focus on while working with the engineering team? 
 
-**Amongst the various tasks listed for this position, the ones that excited me the most were creating demo projects and writing code/tutorials. I could really see myself enjoying that.**
+**Amongst the various tasks listed for this position, the ones that excite me the most are creating demo projects and writing code/tutorials. I could really see myself enjoying that.**
