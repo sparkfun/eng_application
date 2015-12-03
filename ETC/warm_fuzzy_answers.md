@@ -21,7 +21,7 @@ Let us get to know you a bit better. Please answer the following:
 
 5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
 
-**I'm going to have to say Fox Moulder from the X-Files, because as much as I am logical I do secretly open myself up to the idea of extreme possibilities. "I want to believe." Also, I just think that would be the coolest job ever, but of course second to a job at SparkFun Electronics. ;)**
+**I'm going to have to say Fox Moulder from the X-Files, because as much as I am logical I do secretly open myself up to the idea of extreme possibilities. :alien: "I want to believe." Also, I just think that would be the coolest job ever, but of course second to a job at SparkFun Electronics. :wink:**
 
 6. What topics would you like to focus on while working with the engineering team? 
 
