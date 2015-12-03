@@ -1,0 +1,144 @@
+/*
+ * I don't have my own header for Java yet, but when I do
+ * It will go here, and it will be marvelous
+ */
+package week3;
+
+/**
+ *
+ * Author:  Daniel Nichol
+ * Date:    September 24 , 2015
+ * Class:   PRG/421
+ * Assg:    Week 3 Individual
+ */
+
+/**
+ * Program requirements are that the user is able to pull information
+ * from an external file. This file is named "animalDB.txt" and is located in the
+ * default directory for this project.
+ * 
+ * I am using an iterator to save the data in the ArrayList to the file now,
+ * but am using a normal while loop to retrieve it. Originally I was going to
+ * use nested scanner objects to pull back each object because of its default
+ * whitespace delimiter, but chose to make it more readable and pull the string
+ * 
+ * 
+*/
+import java.io.*;
+import java.nio.file.*;
+import static java.lang.System.out;
+import java.util.*;
+
+public class Week3 {
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws ClassNotFoundException {
+        
+        // Stores the name of the file as a string for use later on
+        String fileName = "animalsDB.txt";
+        
+        //Create a list of animal objects and populate with demo data
+        List<Animal> animalList = new ArrayList<>();
+        animalList.add(new Animal("Bob", "Blue", 3, "Dog"));
+        animalList.add(new Animal("Jim", "Green", 4, "Lizard"));
+        animalList.add(new Animal("Steve", "Red", 7, "Cat"));
+        // prints the contents of the list to default output        
+        out.println("Contents of Array\t" + animalList);
+        
+        try { 
+            // Creates or verifies the existance of the animalsDB file            
+            Path path = Paths.get(fileName);
+            if (!Files.exists(path)){
+            	Files.createFile(path);
+            }
+            
+            // Input and Output file access and wrapping buffers
+            // Many of these are left over from the 4-5 previous versions
+            // of this program I tried to get working. 
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+            FileOutputStream fout = new FileOutputStream(fileName);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            
+            //An iterator to show the user the contents of the ArrayList
+            Iterator<Animal> animalIter = animalList.iterator();
+            while (animalIter.hasNext()) {
+                Animal animalCurrent = animalIter.next();
+                out.println(animalCurrent.toString());
+                bw.write(animalCurrent.toString());
+                bw.newLine();
+            }
+            // Always close your resources, malloc, malloc, malloc
+            bw.close();            
+            // This scanner object reads back the file line by line and put it
+            //in a new List<> object
+            Scanner sr = new Scanner(new File(fileName));
+            List<String> list = new ArrayList<String>();
+            while (sr.hasNextLine()){
+                list.add(sr.nextLine());
+            }
+            // Closes the scanner
+            sr.close();
+            // Prints the contents of the List<> object to the default output
+            out.println("Contents of File\t" + list);
+        // Catch statements to help locate issues during file access    
+        } catch(IOException e){
+            e.getMessage();
+            e.printStackTrace();
+        }
+    }
+}
+
+public class Animal
+    {
+        private String Name;
+        private String Color;        
+        private int Age;
+        private String Type;
+        
+        public Animal( String Name, String Color, int Age, String Type){
+        this.Name = Name;
+        this.Color = Color;
+        this.Age = Age;
+        this.Type = Type;
+    }
+        public void setName (String name)
+        {
+            Name = name;
+        }
+        public String getName()
+        {
+            return Name;               
+        }        
+        public void setColor(String color)
+        {        
+            Color = color;
+        }
+        public String getColor ()
+        {
+            return Color;
+        }
+        public void setAge(int age)
+        {        
+            Age = age;
+        }
+        public int getAge ()
+        {
+            return Age;
+        } 
+        public void setType(String type)
+        {        
+            Type = type;
+        }
+        public String getString ()
+        {
+            return Type;
+        }
+        public String toString()
+        {        
+            return ("My name is "+ Name + ", I am " + Color +", and I am a " + Age +" year old " + Type);
+        }
+       
+    }
