@@ -9,7 +9,7 @@ Let us get to know you a bit better. Please answer the following:
 
 2. What is your ideal weekly schedule?
 
-**Since this is a part time job, I would prefer when I am at work for it to be a full day. It wouldn't matter to me whether that meant either coming in every other day or the first half of the week. I just feel I would be more productive for the time I am there.**
+**Since this is a part time job, I would prefer when I am at work for it to be a full day. It wouldn't matter to me whether that meant either coming in every other day or the first half of the week. I just feel I would be more productive with that kind of schedule.**
 
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
