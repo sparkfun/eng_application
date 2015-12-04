@@ -25,3 +25,10 @@ Reference
 * Standoffs were made from measurements
 * The two case halves were designed from scratch
 
+TODO
+----
+* Improve 3d printablity
+* Examine board supports
+* Design a robust mounting solution
+* Design a better waterproofing plan than "smear hot glue on all the joints and holes"
+
