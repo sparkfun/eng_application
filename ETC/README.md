@@ -9,7 +9,17 @@ December 17th, onward.
 
 2. What is your ideal weekly schedule?
 
-I am hoping for the possibility of working on the weekends some, but it's my understanding that Sparkfun operates on normal business hours. Otherwise ideal is anything that fits with my next semester's class schedule and doesn't force me to wake up before the sun rises. As it stands, my earliest days end by 3:00pm, and my latest day ends at 6:00pm (Tuesday).
+If working on the weekends is a possibility, then here is my ideal schedule:
+Saturday: 10-6
+Sunday: 10-6
+Monday 10-2
+
+Otherwise, here is a projected schedule based on my current class schedule:
+Monday: 8-2 
+Wednesday: 5-10
+Thursday: 6-10
+Friday: 5-10
+
 
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
@@ -25,4 +35,4 @@ Wallflower
 
 6. What topics would you like to focus on while working with the engineering team? 
 
-I'm a sucker for organized light and sound, especially music visualization. Something like SoundPuddle is absolutely fascinating to me, so anything pertaining to making responsive light and sound (or basically anything that's tantalizing) is of interest to me, but of course anything that broadens my knowledge of electronics or possibilities of projects is of interest.
+I'm a sucker for organized light and sound, especially music visualization. Something like SoundPuddle is absolutely fascinating to me, so anything pertaining to making responsive light and sound (or basically anything that's tantalizing) is of interest to me, but of course anything that broadens my knowledge of electronics or possibilities of projects is of interest as well.
