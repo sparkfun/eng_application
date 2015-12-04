@@ -148,13 +148,13 @@ int main() {
 			while (window.pollEvent(evn)) {
 				if (evn.type == Event::Closed) { window.close(); return 0; }
 				if (evn.type == sf::Event::KeyPressed) {
-					if (evn.key.code == sf::Keyboard::H) { tow.healthup++; win = false; }						//'H' for max health upgrade.
-					if (evn.key.code == sf::Keyboard::L) { lazr.laserup++; win = false; }						//'L' for laser power upgrade.
+					if (evn.key.code == sf::Keyboard::H) { tow.healthup++; win = false; }					//'H' for max health upgrade.
+					if (evn.key.code == sf::Keyboard::L) { lazr.laserup++; win = false; }					//'L' for laser power upgrade.
 					if (evn.key.code == sf::Keyboard::C) { 
-						if (lazr.coolup < 480) { lazr.coolup += 20; win = false; } 								//"'C' for cooldown upgrade.
+						if (lazr.coolup < 480) { lazr.coolup += 20; win = false; } 							//"'C' for cooldown upgrade.
 					}	
-					if (evn.key.code == sf::Keyboard::N) { win = false; }										//'N' continues to next level with no upgrade.
-					if (evn.key.code == sf::Keyboard::Escape) { win = false; window.close(); return 0; }		//Properly exits program.
+					if (evn.key.code == sf::Keyboard::N) { win = false; }									//'N' continues to next level with no upgrade.
+					if (evn.key.code == sf::Keyboard::Escape) { win = false; window.close(); return 0; }	//Properly exits program.
 				}
 			}
 			//*
