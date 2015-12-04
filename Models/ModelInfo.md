@@ -18,5 +18,5 @@ it was not adopted by the state.
 ### Flag Proposal
 The flag in this directory was a flag that I created in Inkscape this year 
 when some friends were re-imagining the flag for the state of Mississippi. 
-I used inkscape to make the 20 stars, representing Mississippi as the 20th
+I used Inkscape to make the 20 stars, representing Mississippi as the 20th
 state point out from the center of the circle.
