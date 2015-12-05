@@ -6,7 +6,7 @@ Full disclosure: The model was made in a modeling program called Tinkercad by Au
 
 The embedded logos were downloaded, cleaned up in GIMP and imported into Tinkercad. The logos are the only artwork I did not produce in the model.
 
-The model features a fitted battery tray and wiring conduits as well as a battery clip that is pretty satisfying to close (nothing like a nice **\*click\***).
+The model features a fitted battery tray and wiring conduits as well as a battery clip that is pretty satisfying to close (nothing like a nice **\*click***).
 
 ###Landmine Icon###
 I used to make mods back in the day for a game called Blockland. I learned to proficiently use GIMP and really enjoy photo editing. This is one small example of my photo editing skills.
