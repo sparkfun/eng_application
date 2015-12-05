@@ -1,0 +1,385 @@
+//---------------------------------------------------------------
+//- Secondary MCU Firmware
+//- Firmware for MSP430G2553 (IN20, DIP)
+//- By George "AGlass0fMilk" Beckstein
+//- Created: 10/5/2014
+//- Desc: Secondary MCU firmware for DJ controller.
+//- It takes input from a keypad and SPI-connected
+//- 8-channel, 10-bit ADC (MCP3008).
+//- Formats the messages and sends out serial data to main MCU
+//- Note: Uses Arduino Keypad Library 3.1
+//- Thank you Alexander Brevig
+//-
+//- Written for use with Energia IDE (Arduino for Texas Instruments)
+//-
+//- Licensed under the MIT License
+//- (C) Copyright 2014 George Beckstein
+//---------------------------------------------------------------
+
+/* Pin assignments:
+   - P1.0, 1.4, 2.1-2.2 - Rows
+   - P2.3-2.5 - Columns
+   - P1.1-1.2 - TXD/RXD
+   - P1.3 - Deck Change 2 way switch
+   - P2.6 & P2.7 (XIN & XOUT) - Mode selector (3 way switch)
+   - P1.5-1.7, P2.0 - SPI
+     - P1.5 - UCB0CLK (SPI Clock)
+     - P2.0 - Slave Select
+     - P1.6 - Master In/Slave Out
+     - P1.7 - Master Out/Slave In
+   */
+
+#include <Keypad.h>
+#include <SPI.h>
+
+//GPIO related globals/constants
+const int DSPin =  P1_3; //Deck switch pin
+const int MSPin1 = P2_6; //Mode switch pin 1
+const int MSPin2 = P2_7; //Mode switch pin 2
+
+//Keypad related Globals/Constants
+const byte ROWS = 4;
+const byte COLS = 3;
+
+//define the symbols on the buttons of the keypads
+char hexaKeys[ROWS][COLS] = {
+  {1,2,3},
+  {4,5,6},
+  {7,8,9},
+  {10,0,11}
+};
+
+byte rowPins[ROWS] = {P1_0, P1_4, P2_1, P2_2}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {P2_3, P2_4, P2_5}; //connect to the column pinouts of the keypad
+
+Keypad keypad = Keypad(makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS);
+
+int Mode = 0; //Mode selector
+boolean DC_State_Flag = true; //Deck Change State, check value
+
+//SPI A/D Converter Related Globals/Constants
+const byte startBit = 0b00000001;              //As shown in the datasheet
+const unsigned int mask = 0b0000000000000011; //Mask to get rid of the bits we don't need
+
+//SPI Control Class
+class SPI_Control
+{
+  public:
+  int ID; //Specific ID number
+  int channel; //channel number on the MCP3008
+  int value;
+  int oldValue;
+  
+  int sensitivity; //Determines the sensitivity of the control
+  
+  //Constructor
+  SPI_Control(int nID, int nChannel, int nSensitivity); //Channel can be 0-7 (SPI Controls are limited to these numbers)
+  
+  //Methods
+  int      Read(void);  //Reads the value of the control
+  boolean  isNew(void); //Returns true if value has updated
+  void     Send(void);  //Sends a control change to the computer
+  
+};
+
+SPI_Control::SPI_Control(int nID, int nChannel, int nSensitivity)
+{
+  //Assign given values
+  ID = nID;
+  channel = nChannel;
+  sensitivity = nSensitivity;
+  
+  value = 0;        //Set initial value
+  oldValue = 1024; //Value out of range for ADC or digitalRead()
+}
+
+int SPI_Control::Read(void)
+{
+  return readADC(channel, 1);
+}
+
+boolean SPI_Control::isNew(void)
+{
+  value = Read();
+  
+  //First check for max/mins
+  if(value == 1023 || value == 0) //it is max/min
+  {
+    if(value != oldValue) //Max/min not sent already
+    {
+      oldValue = value;
+      return true;
+    }
+  }
+  
+  //If it's in the range, don't consider it a new value
+  if(value >= (oldValue - sensitivity) && value <= (oldValue + sensitivity))
+    return false;
+  else
+  {
+    oldValue = value;
+    return true;
+  }
+
+  return false; //If it hasn't returned true by now, return false
+}
+
+void SPI_Control::Send(void)
+{
+  
+  int message = 0; //Initialize a message integer
+  //Messages for regular analog/digital controls are formatted as follows:
+  //[00000]      [0]         [0000000000]
+  //ID Num     Type (A/D)  Value (10-bit ADC or digital 1/0)
+  
+  message |= (ID << 11);
+  message |= 0b0000010000000000; //Set the type to 1, indicating analog
+  message |= value;
+  
+  Serial.write(highByte(message));
+  Serial.write(lowByte(message));
+  
+}
+
+//Key = key pressed, oorf stands for "On or Off," deck identifies the deck selector position (deck 1 or deck 2)
+//and mode identifies the mode selector position (0 = cues, 1 = loops, 2 = effects)
+void SendKeypadEvent(int key, int oorf, int deck, int mode)
+{ 
+  //The protocol for keypad data is as follows: [00000]    [0]    [0000]    [0]    [00]    [0]    [00]
+                                              //Cntrl #  Type  Btn Pressed On/Off  Mode    Deck   Don't Care
+  //This comprises 16 bits. Please note that the cntrl # for the keypad is reserved, it is 00000
+  //Type identifies if it's analog (1), or digital (0), The rest is self-explanatory
+  
+  //Format the message:
+  int message = 0;
+  
+  //Add the button #
+  key <<= 6; //Shift the number left 6 bits to line it up with the Btn pressed section
+  message |= key; //Add in the button pressed
+  
+  //Add On or off bit
+  oorf <<=5; //Shift the bit left 5 bits to line it up with the on/off bit
+  message |= oorf; //Add it in
+  
+  //Add mode
+  mode <<= 3; //Shift it left 3 bits to line it up with the mode section
+  message |= mode;
+  
+  int deckBit = 0; //Left deck selected
+  if(deck)
+    deckBit = 0b0000000000000100; //Right deck selected (pre-shifted)
+    
+  message |= deckBit; //Add it in
+  
+  //The last two bits we dont care about, they just fill out the two-byte message
+  
+  //Send it out!
+  //Send raw binary bytes
+  Serial.write(highByte(message));
+  Serial.write(lowByte(message));
+}
+
+void SendDeckChange(boolean deck)
+{
+  //Deck changes are sent as keypad presses but with an out of range key button (we use 0-11)
+  //Deck changes are identified as a keypad press with key 15 (1111)
+  int deckChangePress = 15;
+  
+  SendKeypadEvent(deckChangePress, 1, deck, Mode);
+}
+
+//Deck switch interrupt service routine (more efficient than checking it every clock cycle)
+void DS_ISR(void)
+{
+  //Doing serial data transmission in ISRs is a bad habit, so we just set a flag and check it every loop
+  DC_State_Flag = true; //Let the main loop know that the DS has changed state
+  
+  //SendDeckChange(DC_State); //Let the world know (transmit message)!
+}
+
+//Mode Selector Interrupt service routine (handles both pins, more efficient)
+//The three way switch has five pins.
+//The moving switch connects the middle pin (common) to one specific pin
+//The middle pin is ground, and pin 1 and pin 2 are connected to MS_One and MS_Two, respectively
+//The rest of the pins are not used
+//When MS_One = Low and MS_Two = High, Mode 0
+//When MS_One = High and MS_Two = Low, Mode 1
+//When both MS_One and MS_Two are high, pins 1 and 2 are not connected to the switch's ground, Mode 2
+void MS_ISR(void)
+{
+  boolean MS_One = digitalRead(MSPin1); //Set the values to determine mode
+  boolean MS_Two = digitalRead(MSPin2);
+  
+  if(!MS_One && MS_Two)
+    Mode = 0;
+    
+  if(MS_One && !MS_Two)
+    Mode = 1;
+    
+  if(MS_One && MS_Two)
+    Mode = 2;
+}
+
+//Called whenever a keypad event is detected (pressed/released/held)
+void keypadEvent(char key)
+{
+    switch (keypad.getState()){
+    case PRESSED:
+        SendKeypadEvent(key, 1, digitalRead(DSPin), Mode);
+        break;
+
+    case RELEASED:
+        SendKeypadEvent(key, 0, digitalRead(DSPin), Mode);
+        break;
+
+    case HOLD:
+        break;
+    }
+}
+
+/*
+- Read a specific channel (0-7) of the ADC
+- Mode specifies if we should read the inputs as a single-ended input...
+- ...or a differential of two analog inputs.
+- If you don't know what this means, you probably want single-ended input. Read the datahseet
+- Mode 1 = Single-ended, Mode 0 = differential
+*/
+int readADC(int channel, boolean mode)
+{
+  if(channel > 7 || channel < 0) //Cannot read channels that don't exist!
+     return -1;
+     
+  /* On reading data from the MCP3008 ADC IC
+  Please note, the SPI is in mode 0,0, which means SCLK idles in a 'low' state
+  1.) Pull CS/SS (Chip select/Slave select) pin LOW (0)
+  2.) Send start bit data, which is 00000001 or 0x01 (Read the datasheet)
+  3.) Send the input configuration/channel selection data
+      Note: Input config data format: SGL/DIFF, D2, D1, D0, X, X, X, X
+      SGL/DIFF selects what mode, D2, D1, and D0 (3 bits) select channel to read (0-7)
+      and XXXX do not matter. 1 = single-ended, 0 = differential
+  4.) The first byte received will be as follows:
+      ?/?/?/?/?/0/B9/B8, where ? is unknown, 0 is a null bit, and B9 and B8 are the first bits of the 10-bit sample
+      The next byte received will be the rest of the 10-bit sample
+  5.) To get a meaningful reading, we have to combine the 2 bits from the first message with the second message
+      We can acomplish this by trimming the first 6 bits of the first byte (using bitwise & with the mask 0b00000011)
+      shifting the bits 8 to the left, and the bitwise OR-ing the first byte with the second byte
+  6.) End communication by setting CS/SS back high
+  */
+  
+  //Get everything ready to send:
+  byte selectionData = 0;
+  
+  //if(!mode) //Differential mode, doesn't need to change from 0
+  if(mode) //Single-ended mode
+     selectionData = 0b10000000;
+     
+  byte bitChannel = channel << 4; //We need the channel to be the X's in 0b0XXX0000, shift it left 4 bits
+  selectionData |= bitChannel; //Combine the mode/channel data*/
+  
+  //Step 1, Pull SS low
+  digitalWrite(SS, LOW);
+  
+  //Step 2, Send start bit data
+  SPI.transfer(startBit);
+  
+  //Please note: This next part may seem weird. ADC data is sent as soon as the first 4 bits are sent
+  //Guess how long I spent wondering why all my data was garbage because of this litte gem of info?
+  
+  //Step 4/5, Get data and make it meaningful
+  unsigned int receivedData = 0;
+  
+  //Step 3, Send configuration data (simultaneously receive the first few bits of the conversion)
+  receivedData = SPI.transfer(selectionData);
+  
+  receivedData = receivedData & mask; //Get rid of stuff we don't need (all but last two bits)
+  receivedData <<= 8; //Shift it to the left 8 bits*/
+  
+  byte secondMessage = SPI.transfer(0x00); //Get the second message
+  
+  //Combine the first two bits with the last eight bits
+  receivedData |= secondMessage;
+  
+  //Step 6, End communication
+  digitalWrite(SS, HIGH);
+  
+  return receivedData;
+}
+
+void setup()
+{
+  //Serial initialization
+  Serial.begin(9600);
+  
+  //Keypad initialization
+  keypad.addEventListener(keypadEvent);
+  
+  //SPI initialization
+  pinMode(SS, OUTPUT); //Set the slave select pin as an output
+  SPI.begin();
+  SPI.setDataMode(SPI_MODE0);
+  SPI.setBitOrder(MSBFIRST);             //MSB First!
+  SPI.setClockDivider(SPI_CLOCK_DIV32); //Have not tested the stability but DIV32 does the trick
+  
+  //GPIO initialization
+  pinMode(DSPin, INPUT_PULLUP); //Deck switch
+  pinMode(MSPin1, INPUT_PULLUP); //Mode switch
+  pinMode(MSPin2, INPUT_PULLUP); //Mode switch
+  
+  attachInterrupt(DSPin, DS_ISR, CHANGE); //Attach the interrupt service routines to switch pins (more efficient)
+  attachInterrupt(MSPin1, MS_ISR, CHANGE);
+  attachInterrupt(MSPin2, MS_ISR, CHANGE);
+  
+  MS_ISR(); //Call the interrupt service routine to set initial mode
+  
+}
+
+//Analog controls
+SPI_Control knob_1(0, 0, 5);
+SPI_Control knob_2(1, 1, 5);
+SPI_Control knob_3(2, 2, 5);
+SPI_Control knob_4(3, 3, 5);
+SPI_Control knob_5(4, 4, 5);
+SPI_Control knob_6(5, 5, 5);
+SPI_Control knob_7(6, 6, 5);
+SPI_Control knob_8(7, 7, 5);
+
+void loop()
+{
+  /*In the loop we need to:
+    - Check for keypad Input
+    - Check for ADC value changes
+    - Check Deck change Flag
+  */
+  keypad.getKey(); //Neccessary? Yes...
+  
+  //Scan analog controls
+  if(knob_1.isNew())
+    knob_1.Send();
+    
+  if(knob_2.isNew())
+    knob_2.Send();
+    
+  if(knob_3.isNew())
+    knob_3.Send();
+    
+  if(knob_4.isNew())
+    knob_4.Send();
+    
+  if(knob_5.isNew())
+    knob_5.Send();
+    
+  if(knob_6.isNew())
+    knob_6.Send();
+    
+  if(knob_7.isNew())
+    knob_7.Send();
+    
+  if(knob_8.isNew())
+    knob_8.Send();
+    
+  if(DC_State_Flag)
+  {
+    DC_State_Flag = false;
+    SendDeckChange(digitalRead(DSPin));
+  }
+}
