@@ -1,0 +1,428 @@
+//---------------------------------------------------------------
+//- Primary MCU Firmware
+//- Firmware for MSP430G2553 (IN20, DIP)
+//- By Don "AGlass0fMilk" Beckstein
+//- Created: 10/7/2014
+//- Desc: Primary MCU firmware for DJ controller.
+//- It takes input from buttons, rotary encoder, and dials
+//- Also receives serial data from secondary MCU
+//- Formats the messages and sends out serial data to computer
+//- Note: Referenced bildr article about rotary encoders
+//- Found here: http://bildr.org/2012/08/rotary-encoder-arduino/
+//- Thanks!
+//---------------------------------------------------------------
+
+/* Pin assignments:
+   Analog Input Pins:  P1.0, P1.3-7 (6 Total)
+   Rotary Encoder Input Pins: P2.0-2 (3 total)
+   Digital Input Pins: P2.3-7 (Including P2.6/7, IE: XIN and XOUT) (5 total)
+   P1.1 - RXD
+   P1.2 - TXD
+   */
+
+/* Note about reserved ID numbers:
+Certain Digital ID numbers are reserved for specific controls. These include:
+0 - Reserved for Keypad/Deck Changes
+1 - Reserved for Rotary Encoder
+
+Do not use these ID numbers for general digital inputs! They will be interpreted incorrectly!
+*/
+
+class AnalogControl
+{
+ public:
+  //Identification information
+  int pin;      //Sets the pin to be used by the control
+  int ID;       //Identification number (0-31)
+  
+  //Data processing variables
+  int value; //Stores the current value
+  int oldValue; //Stores the old value (for preventing constant resends)
+  
+  int sensitivity; //Value used for setting sensitivity (a variable in smoothing algorithm)
+  
+  //Used for averaging (ADC on MSP430G2553 is very unstable compared to MCP3008)
+  int average;
+  int counter;
+  
+  //Constructor
+  AnalogControl(int nID, int nPin, int nSensitivity);
+  
+  //Methods
+  int      Read(void);    //Reads the value of the control
+  boolean  isNew(void);   //Returns true if the value has updated (within a reasonable range, the sensitivity)
+  void     Send(void);    //Transmits the control change to the computer for processing
+  
+};
+
+AnalogControl::AnalogControl(int nID, int nPin, int nSensitivity)
+{
+  //Store given values
+  ID = nID;
+  pin = nPin;
+  sensitivity = nSensitivity;
+  
+  average = 0;
+  counter = 0;
+    
+  pinMode(pin, INPUT); //Configure pin as input
+  
+  value = analogRead(pin); //Set initial value
+  oldValue = 1024; //Value out of range for ADC or DigitalRead
+  
+} 
+
+//Returns value of control
+int AnalogControl::Read(void)
+{
+  unsigned int pinVal = analogRead(pin);
+  if(pinVal == 1023 || pinVal == 0) //it is max/min
+  {
+    return pinVal;
+  }
+  
+  if(pinVal > 1015)
+    return 1023;
+  
+  if(counter != 3)
+  {
+    average += pinVal;
+    counter++; //Increment Counter
+    return 1025; //Not ready value
+  }
+  else
+  {
+    average /= 4; //Divide by 4
+    counter = 0; //Reset counter
+    return average;
+  }
+}
+
+//Determines whether a "new" (significantly changed) value should be sent
+boolean AnalogControl::isNew(void) 
+{
+  value = Read(); //Set value of control
+  
+  //This means it's not ready
+  if(value == 1025)
+    return false;
+    
+  //First check for max/mins
+  if(value == 1023 || value == 0) //it is max/min
+  {
+    if(value != oldValue) //Max/min not sent already
+    {
+      oldValue = value;
+      return true;
+    }
+  }
+  
+  //If it's in the range, don't consider it a new value
+  if(value >= (oldValue - sensitivity) && value <= (oldValue + sensitivity))
+    return false;
+  else
+  {
+    oldValue = value;
+    return true;
+  }
+  
+  return false; //If it hasn't returned true by now, return false
+}
+
+void AnalogControl::Send(void)
+{
+  //Serial.println(value);
+  SendMessage(ID, true, value); //Note: true = analog
+}
+
+class RotaryEncoder
+{
+  public:
+  //Identification information
+  int encoderPin1;  //Encoder data 1
+  int encoderPin2;  //Encoder data 2
+  int encoderBtnPin;  //Integrated pushbutton input
+  
+  //Data processing information
+  volatile int lastEncoded;
+  //voltaile long encoderValue;
+  
+  boolean newValue;     //Allows loop program to send serial data outside of interrupt
+  boolean rotDirection; //Rotation Direction, CW = 0, CCW = 1
+  
+  int clickCount; //Since each detent is 4 clicks, we want to count and send one message/four
+  
+  unsigned long lastClickTime; //Stores the last time the button was clicked for determining double clicks
+  boolean dblClicked; //Double clicked?
+  
+  //int lastMSB; //Last most significant bit
+  //int lastLSB; //Last least significant bit
+  
+  //Constructor
+  RotaryEncoder(int nPin1, int nPin2, int nPin3);
+  
+  //Methods
+  boolean isNew();
+  boolean hasDblClicked();
+  void    SendRot();
+  void    SendDblClick();
+  
+};
+
+RotaryEncoder::RotaryEncoder(int nPin1, int nPin2, int nPin3)
+{
+  encoderPin1 = nPin1;
+  encoderPin2 = nPin2;
+  encoderBtnPin = nPin3;
+  
+  lastEncoded = 0;
+  newValue = false;
+  clickCount = 0;
+  
+  lastClickTime = 0;
+  dblClicked = false;
+  
+  //lastMSB = 0;
+  //lastLSB = 0;
+  
+  pinMode(encoderPin1, INPUT_PULLUP);
+  pinMode(encoderPin2, INPUT_PULLUP);
+  pinMode(encoderBtnPin, INPUT_PULLUP);
+  
+  //call updateEncoder() when any high/low changed seen
+  attachInterrupt(encoderPin1, updateEncoder, CHANGE);
+  attachInterrupt(encoderPin2, updateEncoder, CHANGE);
+  attachInterrupt(encoderBtnPin, encoderBtn_ISR, RISING); //Button interrupt service handler 
+}
+
+boolean RotaryEncoder::isNew()
+{
+  return newValue;
+}
+
+boolean RotaryEncoder::hasDblClicked()
+{
+  return dblClicked;
+}
+
+/* Rotary Encoder Message Format
+The format is similar to the other formats used:
+
+[00001]      [0]      [00]      [0]      [0000000]
+ID #        Type     Value  Super speed  Don't Care
+
+The ID number, 1, is reserved for the rotary encoder
+The type is binary (0)
+The value can be: 0 = CW, 1 = CCW, 2 = Double Click
+The super speed bit is 1 when the rotary dial is pressed down and held while rotating
+It speeds up scrolling by letting the computer know to send multiple rotation messages detent
+
+*/
+void RotaryEncoder::SendRot()
+{
+  newValue = false; //Reset the flag
+  
+  int message = 0;
+  message |= rotDirection;
+  message <<= 1; //Shift the value left 1 bit to make room for super speed bit
+  message |= !(digitalRead(encoderBtnPin)); //Add in the value of the integrated push button (it has a pull-up resistor so not it)
+  message <<= 7; //Shift the value left 7 bits to line it up with the data format
+  
+  SendMessage(1, 0, message);
+  
+}
+
+void RotaryEncoder::SendDblClick()
+{
+  dblClicked = false; //Reset the flag
+  SendMessage(1, 0, 0b1000000000); //Send a binary 2 in the value position (indicates Dbl Click)
+  //Note that we do not care about the super speed bit in this situation
+}
+
+//Easier to have a General Purpose send function for digital
+void SendMessage(int IDnum, boolean type, int value)
+{
+  int message; //Initialize a message integer
+  //Messages for regular analog/digital controls are formatted as follows:
+  //[00000]      [0]         [0000000000]
+  //ID Num     Type (A/D)  Value (10-bit ADC or digital 1/0)
+  
+  message |= (IDnum << 11); //Add in the ID number (shifted left 11 bits)
+  message |= (type << 10); //Add in the type (shifted left 10 bits)
+  message |= value;        //Add in the value (last 10 bits, needs no shifting)
+  
+  Serial.write(highByte(message));
+  Serial.write(lowByte(message));
+}
+
+//GPIO Related Globals
+const int digitalPins[] = {P2_3, P2_4, P2_5, P2_6, P2_7}; //digital pins to use
+
+boolean digitalHasChanged[] = {false, false, false, false, false}; //Flags for digital inputs
+
+//Initialize control classes
+AnalogControl knob_1(8, P1_0, 25);
+AnalogControl knob_2(9, P1_3, 25);
+AnalogControl knob_3(10, P1_4, 25);
+AnalogControl knob_4(11, P1_5, 25);
+AnalogControl knob_5(12, P1_6, 25);
+AnalogControl knob_6(13, P1_7, 25 );
+
+RotaryEncoder encoder(P2_0, P2_1, P2_2); //New rotary encoder connected to pins 8-10
+
+
+void setup()
+{
+  Serial.begin(9600);
+  
+  //Setup the digital inputs
+  
+  pinMode(digitalPins[0], INPUT_PULLUP);
+  pinMode(digitalPins[1], INPUT_PULLUP);
+  pinMode(digitalPins[2], INPUT_PULLUP);
+  pinMode(digitalPins[3], INPUT_PULLUP);
+  pinMode(digitalPins[4], INPUT_PULLUP);
+  
+  attachInterrupt(digitalPins[0], button_0_ISR, CHANGE);
+  attachInterrupt(digitalPins[1], button_1_ISR, CHANGE);
+  attachInterrupt(digitalPins[2], button_2_ISR, CHANGE);
+  attachInterrupt(digitalPins[3], button_3_ISR, CHANGE);
+  attachInterrupt(digitalPins[4], button_4_ISR, CHANGE);
+
+  
+}
+
+void loop()
+{
+  //To do in loop:
+  // - Check for change in/send analog controls
+  // - Check for change in/send digital controls
+  // - Check rotary encoder
+  // - Pass through serial data from Secondary MCU
+  
+  //Check Analog
+  if(knob_1.isNew())
+    knob_1.Send();
+    
+  if(knob_2.isNew())
+    knob_2.Send();
+   
+  if(knob_3.isNew())
+    knob_3.Send();
+  
+  if(knob_4.isNew())
+    knob_4.Send();
+  
+  if(knob_5.isNew())
+    knob_5.Send();
+  
+  if(knob_6.isNew())
+    knob_6.Send();
+    
+    
+    
+  //Check Digital
+  for(int i=0; i<5; i++)
+  {
+    if(digitalHasChanged[i])
+    {
+       SendMessage((i+2), 0, digitalRead(digitalPins[i])); //Offset is 2 to make room for keypad/Rot Encoder
+       digitalHasChanged[i] = false; //Reset the flag
+    }
+  }
+  
+  //Check Rotary Encoder
+  if(encoder.isNew())
+    encoder.SendRot();
+    
+  if(encoder.hasDblClicked())
+    encoder.SendDblClick();
+    
+  //Pass through serial data from secondary MCU
+  if(Serial.available() > 0)
+  {
+    Serial.write(Serial.read());
+  }
+}
+
+//ISR for the encoder pins
+void updateEncoder()
+{
+  
+  encoder.clickCount++; //Increment counter
+  
+  int MSB = digitalRead(encoder.encoderPin1); //MSB = most significant bit
+  int LSB = digitalRead(encoder.encoderPin2); //LSB = least significant bit
+
+  int encoded = (MSB << 1) |LSB; //converting the 2 pin value to single number
+  int sum  = (encoder.lastEncoded << 2) | encoded; //adding it to the previous encoded value
+  
+  boolean newRot = false;
+
+  if(sum == 0b1101 || sum == 0b0100 || sum == 0b0010 || sum == 0b1011) //CW
+  {
+    //encoder.newValue = true;
+    encoder.rotDirection = false; //CW
+    //newRot = false;
+  }
+  
+  if(sum == 0b1110 || sum == 0b0111 || sum == 0b0001 || sum == 0b1000) //CCW
+ {
+   //encoder.newValue = true;
+   encoder.rotDirection = true; //CCW
+   //newRot = true;
+ }
+ 
+ //if(newRot != encoder.rotDirection && counter > 0) //If we're in the middle of a move and it switches directions, reset counter
+
+  encoder.lastEncoded = encoded; //store this value for next time
+  
+  if(encoder.clickCount >= 4) //4 clicks/detent, set flag to true
+  {
+    encoder.newValue = true;
+    encoder.clickCount = 0; //reset counter
+  }
+}
+
+//Called when the encoder button is pressed
+void encoderBtn_ISR()
+{
+  //if(lastClickTime == 0) //Last click time has been reset, this is the first click
+  //  lastClickTime = millis();
+  ///else //This is another click (or bounce?)
+  //{
+    unsigned long deltaClickTime = millis()-encoder.lastClickTime;
+    if(deltaClickTime >= 100 && deltaClickTime < 450) //Lower/upper limit 1/10 to 3/10 second
+      encoder.dblClicked = true; //It's within range, set the flag
+    else if(deltaClickTime > 300) //It's over the length of time, reset the lastClickTime
+      encoder.lastClickTime = millis();
+      
+    //Serial.println(deltaClickTime);
+  //}
+}
+
+//Digital Input ISRs
+void button_0_ISR()
+{
+  digitalHasChanged[0] = true;
+}
+
+void button_1_ISR()
+{
+  digitalHasChanged[1] = true;
+}
+
+void button_2_ISR()
+{
+  digitalHasChanged[2] = true;
+}
+
+void button_3_ISR()
+{
+  digitalHasChanged[3] = true;
+}
+
+void button_4_ISR()
+{
+  digitalHasChanged[4] = true;
+}
