@@ -1,23 +1,12 @@
-Models Sample
-==============
+#Model#
+###Streetlight###
+The model shown here is covered in a project writeup I included with my resume submission. It was a birthday gift I made for my girlfriend, a light-activated nightlight with the theme of her favorite band (Streetlight Manifesto). It was also my first foray into 3D modelling/3D printing.
 
-Instructions
-------------
+Full disclosure: The model was made in a modeling program called Tinkercad by Autodesk (because it was online and free). I'm certain I can quickly learn modeling programs you may require, but this is an example of some work I have made.
 
-Please include a sample model in this folder. 
+The embedded logos were downloaded, cleaned up in GIMP and imported into Tinkercad. The logos are the only artwork I did not produce in the model.
 
-A model from one of your personal projects is preferred, though anything that demonstrates your ability with one of the following types of programs is acceptable:
+The model features a fitted battery tray and wiring conduits as well as a battery clip that is pretty satisfying to close (nothing like a nice **\*click\***).
 
-* SolidWorks
-* FreeCAD
-* Sketchup
-* Blender
-* Fritzing
-* Illustrator
-* Inkscape
-
-Additional points
-------------------
-
-* The model does not need to be overly complex, if creating one from scratch.
-* This must be your original work. Any partial contributions from others should be attributed. 
+###Landmine Icon###
+I used to make mods back in the day for a game called Blockland. I learned to proficiently use GIMP and really enjoy photo editing. This is one small example of my photo editing skills.
