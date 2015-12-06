@@ -17,7 +17,7 @@ Let us get to know you a bit better. Please answer the following:
 
 4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
-**Yes, absolutely! I have four dogs at home all ranging from 8 lbs to 80 lbs. I imagine at some point I would bring one of them with me to work, however, it would be rare.**
+**Yes, absolutely! I have four dogs at home all ranging from 8 lbs to 80 lbs. I imagine at some point I would bring one of them with me to work once in a while.**
 
 5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
 
