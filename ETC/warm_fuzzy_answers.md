@@ -13,7 +13,7 @@ Let us get to know you a bit better. Please answer the following:
 
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
-**Range = ($XX,XXX/year , $XX,XXX/year)** 
+**Range = ($25,000/year , $35,000/year)** 
 
 4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
