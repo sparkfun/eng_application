@@ -20,10 +20,9 @@ Wednesday: 5-10
 Thursday: 6-10
 Friday: 5-10
 
-
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
-$10-$15 per hour
+$12-$20 per hour
 
 4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
@@ -31,7 +30,7 @@ I enjoy and have no problems with dogs. If I get a dog during my employment at S
 
 5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
 
-Wallflower
+Alan Watts. I enjoy merely exploring philosophical ideas rhetorically and sharing my thoughts with people in this fashion, as well as hearing their thoughts and having an interesting discourse. Having an understanding and humble attitude towards the world we find ourselves in as he does gives a lot of meaningfulness to all productivity.
 
 6. What topics would you like to focus on while working with the engineering team? 
 
