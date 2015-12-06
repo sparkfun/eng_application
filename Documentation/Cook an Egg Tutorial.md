@@ -26,7 +26,7 @@ Now, place your butter or oil in the pan to bring it to cooking temperature.
 ###<u>The Messy Part</u>
 Once your butter is melted or your oil is heated, go ahead and grab your eggs. If you grabbed a butter knife, use the sharp edge and quickly but lightly whack the exterior of the egg to make an incision, but not slice it in half. If you didn't grab a butter knife, simply use any hard, thin object nearby (e.g. edge of pan, edge of spatula, etc.)
 
-Once you have a crack in shell, hold the egg over the pan and pull the shell apart from the crack to free the yolk and white from inside, and let them drop into the pan. 
+Once you have a crack in the shell, hold the egg over the pan and pull the shell apart from the crack to free the yolk and white from inside, and let them drop into the pan. 
 
 ---
 ###<u>Let's Get Cooking</u>
