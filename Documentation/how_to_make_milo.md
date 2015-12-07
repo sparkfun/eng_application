@@ -59,5 +59,4 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 
 ![Stirring Milo](https://github.com/Munnu/eng_application/blob/master/Documentation/images/12%20Milo%20Stirring.jpg "Stirring Milo")
 ![Completed Milo](https://github.com/Munnu/eng_application/blob/master/Documentation/images/13%20Milo%20Finished.jpg "Completed Milo")
-
 ### Done
