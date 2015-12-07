@@ -5,7 +5,7 @@ Warm Fuzzies
    I am available to start immediately. 
 
 2. What is your ideal weekly schedule?
-   Monday-Thursday from 10am-4pm.
+   Monday-Thursday from 10am-5pm.
 
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
    $16.00/hour - $23.00/hour.
