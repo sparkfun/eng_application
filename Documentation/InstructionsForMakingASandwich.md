@@ -2,7 +2,7 @@
 
 **by Gabriel Bolivar** 
 
-Disclaimer: The author is not responsible for any injuries occurred during the implementation of these instructions even if the instructions were followed as advised. 
+Disclaimer: The author is not responsible for any injuries occurred during the implementation of these instructions even if the instructions are followed as directed. 
 
 ### Ingredients ###
 - Mayonnaise
@@ -57,9 +57,17 @@ Disclaimer: The author is not responsible for any injuries occurred during the i
 - Step 10: Place the sandwich on the plate.
 - Step 11: Store the remaining ingredients accordingly.
 - Step 12: Place the knife and the cutting board in the sink. They will need to be washed later.
-- Step 12: Enjoy the sandwich!
+- Step 13: Enjoy the sandwich!
 
-**Note** These steps should be followed as indicated to potentiate the taste of the sandwich. 
+**Note:** These steps should be followed as instructed in order to obtain the best possible results. 
+
+The images were taken from the following websites:
+
+- Picture 1: http://toriavey.com/images/2014/01/Avocado-8-640x480.jpg
+- Picture 2: http://favim.com/image/672489/
+- Picture 3: https://	farm6.staticflickr.com/5556/14926424405_94bfd7972e_b.jpg
+- Picture 4: http://www.simplyrecipes.com/wp-content/uploads/2013/08/avocado-lettuce-tomato-sandwich-a.jpg
+
 
 Please direct any questions and suggestions to: 
 howToMakeASandwichByGabrielB@gmail.com

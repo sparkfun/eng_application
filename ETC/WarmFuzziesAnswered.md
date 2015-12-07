@@ -5,13 +5,14 @@ Let us get to know you a bit better. Please answer the following:
 
 1. When can you start?
 
-01.04.2016 @ 8:00 A.M. (or 7:59 A.M.)
+01.04.2016
 
 
 2. What is your ideal weekly schedule?
 
 I'll taking a couple of courses next semester and they are in the afternoon. A morning schedule during the weekdays should work. 
 
+Tentative schedule: 
 Monday: 9:00 - 2:00
 Tuesday: 9:00 - 2:00
 Thursday: 9:00 - 2:00
@@ -25,10 +26,12 @@ Salary range from $15/h to $30/h
 
 4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
-I like dog and have not problem with them around. I do not have one at this moment.  
+I like dogs and have no problem with them around. I fell comfortable with them but I do not have one at this moment because of my schedule.  
 
 
-5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
+5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)?
+
+ 
 
 6. What topics would you like to focus on while working with the engineering team? 
 
