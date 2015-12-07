@@ -1,7 +1,6 @@
 Warm Fuzzies
 =============
 
-Let us get to know you a bit better. Please answer the following:
 
 ##When can you start?
 
@@ -13,7 +12,7 @@ Let us get to know you a bit better. Please answer the following:
 
 ##What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
-*I am early in my career and I believe that the minimum I would be comfortable accepting would be 15/hour the highest would be about 25/hour since I am new to the industry. I would prefer to have wage based on completion of products and tasks though because I believe fixed wage contracts encourage inefficient employees. Variable wage motivates them to complete tasks and succeed.*   
+*I am early in my career and I believe that the minimum I would be comfortable accepting would be $15/hour the highest would be about $25/hour since I am new to the industry. I would prefer to have wage based on completion of products and tasks though because I believe fixed wage contracts encourage inefficient employees. Variable wage motivates them to complete tasks and succeed.*   
 
 ##SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
