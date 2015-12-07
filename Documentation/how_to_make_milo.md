@@ -29,7 +29,8 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 1. While the kettle is boiling, scoop out 2-3 (4 max) teaspoons full of Milo powder (for a 4~8 inch mug).
 
 ![What a spoonful of Milo powder looks like](https://github.com/Munnu/eng_application/blob/master/Documentation/images/5%20Milo%20Spoonful.jpg "Spoonful of Milo Powder")
-3. Don't be like me. Try not to eat off all of the dry Milo. Though, it's okay if you do.
+
+2. Don't be like me. Try not to eat off all of the dry Milo. Though, it's okay if you do.
 
 ### Optional Step 3: Making Milo with Condensed Milk
 
