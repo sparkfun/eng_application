@@ -56,7 +56,7 @@ void loop() {
   digitalWrite(ledPin, HIGH);
   }
   
-  // a slighting higher threshold activates both the first row and the next row of LEDs
+  // a slightly higher threshold activates both the first row and the next row of LEDs
   if (sensorValue > 570){
    digitalWrite(ledPin, HIGH);
   digitalWrite(ledPin2, HIGH);
