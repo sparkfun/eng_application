@@ -31,6 +31,7 @@ I like dogs and have no problem with them around. I fell comfortable with them b
 
 5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)?
 
+Mexican soccer player Rafael Marquez. I identify myself with him for three main reasons. The first one is that he plays the same position (defense) that I used to play when I was a kid, and he excels at it. The second reason is because of his passion for what he does and his courage to follow his dreams. I am also very passionate, not about soccer but about designing and innovating electronic devices, and like to give my best in order to achieve my dreams. The third reason is because of his altruistic work to help kids to have a decent education and the tools to achieve their dreams. I also think that education and opportunity are the best tools a person can have to succeed, and I like to get involved and help people as much as I can.
  
 
 6. What topics would you like to focus on while working with the engineering team? 
