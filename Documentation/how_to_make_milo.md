@@ -53,7 +53,6 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 2. Once poured, you will notice that the Milo has a frothy white top. The frothiness means that there is enough Milo in the mug.
 3. The Milo mix in your mug may bubble a little bit if you have added cold milk milk or cold condensed milk. This is okay.
 ![Bubbling Milo mixture 1](https://github.com/Munnu/eng_application/blob/master/Documentation/images/10%20Milo%20Bubbling.jpg "Bubbling Milo mixture")
-
 ![Bubbling Milo mixture 2](https://github.com/Munnu/eng_application/blob/master/Documentation/images/11%20Milo%20Bubbling.jpg "Bubbling Milo mixture")
 3. If there are a few chunks of chocolate left over, that's okay, but it does mean that there was a little bit too much milo in the mug. If your mug was not filled to the top, you could solve this by poring in more hot water.
 4. Stir Milo.
