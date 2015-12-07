@@ -57,10 +57,12 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 ![Bubbling Milo mixture 1](https://github.com/Munnu/eng_application/blob/master/Documentation/images/10%20Milo%20Bubbling.jpg "Bubbling Milo mixture")
 
 ![Bubbling Milo mixture 2](https://github.com/Munnu/eng_application/blob/master/Documentation/images/11%20Milo%20Bubbling.jpg "Bubbling Milo mixture")
+
 3. If there are a few chunks of chocolate left over, that's okay, but it does mean that there was a little bit too much milo in the mug. If your mug was not filled to the top, you could solve this by poring in more hot water.
 4. Stir Milo.
 
 ![Stirring Milo](https://github.com/Munnu/eng_application/blob/master/Documentation/images/12%20Milo%20Stirring.jpg "Stirring Milo")
 5. Done
+
 ![Completed Milo](https://github.com/Munnu/eng_application/blob/master/Documentation/images/13%20Milo%20Finished.jpg "Completed Milo")
 
