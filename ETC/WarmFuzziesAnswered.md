@@ -38,10 +38,4 @@ I love digital and hardware design. It would be great to get involved in the dev
 -Writing code libraries for products
 -Designing circuits diagrams for product
 
-<<<<<<< HEAD
-Having said that, I'd also like to get involved in other duties to get familiar with the products, the development and documentation process and expand my knowledge.  
-=======
-Having said that, I'd also like to get involved in other duties to get familiar with the products, the development and documentation process and expand my knowledge.  
-
-
->>>>>>> origin/master
+I'd also like to get involved in other duties to get familiar with the products, the development and documentation processes and to expand my knowledge.  
