@@ -1,0 +1,25 @@
+Warm Fuzzies
+=============
+
+Let us get to know you a bit better. Please answer the following:
+
+1. When can you start?
+Negotiable.
+
+2. What is your ideal weekly schedule?
+My ideal weekly schedule would be that every week I learn something new and get to really grow and stretch my 
+mind and be surrounded by people who are eager and enthusiastic and value sharing knowledge and learning themselves. 
+My ideal weekly schedule would also entail having time to play around with standard engineering tools and also 
+coming home with knowledge that would be helpful for me as an inventor.
+
+3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
+Negotiable.
+
+4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
+Don't have a dog, but don't mind (as long as it is a well-trained, behaved dog).
+
+5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)? 
+Good question, I'm not sure (never thought about it, really). Probably the opposite of me would be someone who wears very creative clothing and has a very creative hairstyle with a face piercing. This alter ego would most likely have a lot of different skills and has accomplished different things that a lot of people wouldn't understand how they were able to get in the position that would grant them these opportunities (something like: neurosurgeon by day, music producer by night). They probably wouldn't let the way they look dictate where they want to go next.
+
+6. What topics would you like to focus on while working with the engineering team? 
+I really want to be able to work on a breadth of different hardware projects, to be honest.
