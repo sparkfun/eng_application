@@ -48,7 +48,6 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 ### Step 5: Pouring Boiled Water
 
 1. Once the kettle has been boiled, pour the hot water into your mug. It doesn't matter where you stop, though the chocolate is likely to dissolve when you pour the hot water close to the maximum height of the mug.
-
 ![Pouring hot water into mug](https://github.com/Munnu/eng_application/blob/master/Documentation/images/9%20Milo%20Pouring%20Hot%20Water.jpg "Pouring hot water into mug")
 
 2. Once poured, you will notice that the Milo has a frothy white top. The frothiness means that there is enough Milo in the mug.
