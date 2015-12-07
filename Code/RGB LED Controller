@@ -1,0 +1,181 @@
+ /*This simple code uses a push button and a 10K ohm potentiometer to 
+ control an RGB LED or an array of RGB LEDs.  The program allows the
+ user to switch between two modes, manual color select and automatic
+ color scroll, using the push button.  When in manual color select
+ mode, the potentiometer can be adjusted to vary the intesities of red,
+ green, and blue, resulting in various colors.  When in automatic
+ color scroll mode, the intesities of red, green, and blue are varried
+ automatically and the potentiometer is used to vary the speed at 
+ which the program scrolls through various colors.
+
+ This program builds off of previous programs by Clay Shirky and
+ David A. Mellis, as well as code from my own previous projects.
+
+ Copyright (c) 2015 Michael Kouznetsov
+
+ ----------------------------------------------------------------------------
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.*/
+
+ int ledPin = 13;    //Not to be confused with the RGB LED, this is a single color LED used to indicate which mode the program is in.
+ int buttonPin = 8;  //Signal from the button is connected to this digital pin.
+ int potPin = A0;    //Signal from the pot is connected to this analog pin.
+
+ int redPin = 9;     //Assuming common cathode RGB LED, annodes for each color connect to these digital PWM pins.
+ int greenPin = 10;
+ int bluePin = 11;
+ 
+ int potVal;         //Create a place to store the potentiometer's value for later.
+ 
+ int redVal;         //Create a place to store red, green, and blue values in manual mode.
+ int greenVal;
+ int blueVal;
+ 
+ int r;              //Create a place to store red, green, and blue values in automatic mode.
+ int g;
+ int b;
+ int rd;
+ int gd;
+ int bd;
+ 
+ int modeState;       //Create a place to store various pin logic states for later.
+ int buttonState;
+ int previousButtonState;
+ 
+ long time = 0;      //This variable will keep track of how much time has gone by.
+ long debounce = 200;//This variable delays time between button reads to limit noise. Mode flickers, try increasing debouce value.
+ 
+ void setup()
+ {
+   pinMode(ledPin, OUTPUT);    //Set all pin modes
+   pinMode(buttonPin, INPUT);
+   pinMode(potPin, INPUT);
+   pinMode(redPin, OUTPUT);
+   pinMode(greenPin, OUTPUT);
+   pinMode(bluePin, OUTPUT);
+}
+ void loop()
+ {
+   buttonState = digitalRead(buttonPin);  //Read button signal from pin and store it.
+   
+   if (buttonState == HIGH && previousButtonState == LOW && millis() - time > debounce)  //When the button is pressed, it is read only once.  If the press time was less than the debounce time, continue.
+   {
+     if (modeState == HIGH)  //If program is on mode two...
+     {
+       modeState = LOW;      //...switch to mode one.
+       time = millis();      //Update time. 
+     }
+     else{                   //If program is on mode one...
+       modeState = HIGH;     //...switch to mode two
+       time = millis();      //Update time.
+    }
+  }
+
+//AUTOMATIC MODE
+
+   if (modeState == LOW)  //If program is on mode one...
+   {
+     if (r >= 255)        //...being cycling through color values.
+     {
+       rd = -1;
+     }
+     if (r <= 1)
+     {
+       rd = 1;
+     }
+     if (g >= 254) 
+     {
+       gd = -2;
+     }
+     if (g <= 1) 
+     {
+       gd = 2;
+     }
+     if (b >= 253) 
+     {
+       bd = -3;
+     }
+     if (b <= 1) 
+     {
+       bd = 3;
+     }
+     
+     r += rd;
+     g += gd;
+     b += bd;
+     
+     analogWrite(redPin, r);    //Display color on LED.
+     analogWrite(greenPin, g);
+     analogWrite(bluePin, b);
+     
+     potVal = analogRead(potPin);  //Read signal from pot and store it.
+     potVal /= 25;                 //Narrow speed options down from 1024 to ~40
+     delay(potVal);
+   }
+ 
+ //MANUAL MODE
+ 
+   else if (modeState == HIGH)      //If program is on mode two...
+   {
+    potVal = analogRead(potPin);   //...read signal from pot and store it...
+    
+    if (potVal < 256)              //...then, display a color based on pot value.
+    {                              //User can fade from red to green, green to blue, blue to green, and finally white.
+      redVal = 256 - potVal;
+      greenVal = potVal;
+      blueVal = 1;
+    }
+    else if (potVal < 512)
+    {
+      potVal -= 255;
+      
+      redVal = 1;
+      greenVal = 256 - potVal;
+      blueVal = potVal;
+    }
+    else if (potVal < 768)
+    {
+      potVal -= 511;
+      
+      redVal = potVal;
+      greenVal = 1;
+      blueVal = 256 - potVal;
+    }
+    else
+    {
+      potVal -= 767;
+      
+      redVal = potVal;
+      greenVal = potVal;
+      blueVal = potVal;
+    }
+    
+   analogWrite(redPin, redVal);  
+   analogWrite(greenPin, greenVal); 
+   analogWrite(bluePin, blueVal);
+ }
+
+ digitalWrite(ledPin, modeState);  //Use indicator LED to display mode. Off when program is mode one, on when mode two.
+ 
+ previousButtonState = buttonState;//Update previousButtonState   
+}
