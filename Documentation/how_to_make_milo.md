@@ -24,6 +24,7 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 
 ### Optional Step 4: Making Milo with Other Milk
 1. You could add richness to Milo by adding equal parts milk to the amount Milo powder already in the mug.
+
 ### Step 5: Pouring Boiled Water
 1. Once the kettle has been boiled, pour the hot water into your mug. It doesn't matter where you stop, though the chocolate is likely to dissolve when you pour the hot water close to the maximum height of the mug.
 2. Once poured, you will notice that the Milo has a frothy white top. The frothiness means that there is enough Milo in the mug.
