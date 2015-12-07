@@ -1,5 +1,5 @@
 //File: shuttle3D.cxx Written by Nicolas Cosca on 04/29/2012
-//Edited by Nicolas Cosca on 12/6/2015
+//Edited by Nicolas Cosca on 12/06/2015
 //nicolas.cosca@colorado.edu
 //This program uses data from a file to construct a 3d model
 //of a shuttle by connecting vertices together using arrays and
@@ -83,7 +83,7 @@ int main()
 
 	convert_data(datanew, data); //convert data to pixel
 	
-//Draw ship (HW 8)
+//Draw ship
 	draw_ship(datanew, vertex, color);
 
 	swapbuffers(); 
@@ -94,3 +94,143 @@ int main()
     }
 
     return EXIT_SUCCESS;
+}
+
+// Function Definitions
+
+//pixel function
+int pixel(double wx, double wmin, double wmax, int pmin, int pmax)
+{
+    double ratio;
+    double result;
+    ratio = (pmax - pmin)/(wmax - wmin);
+    result = (wx - wmin) * ratio + pmin;
+    return int(result);
+}
+
+
+//--------------------------------------------------------------------------
+//Opens .dat file and reads it into arrays
+void read_data(double data[M][3], unsigned int vertex[N], int color[N])
+{
+    
+    size_t num_pts;
+    size_t num_col;
+    ifstream ins;
+ 
+    
+    ins.open("shuttle.dat"); //same folder
+
+    if(ins.fail())
+    {
+	cerr<<"file didn't open";
+    }
+
+    ins>>num_pts;
+    assert(num_pts == M);
+
+    for(int i=0; i<(int)M; i++)
+    {
+	ins>>data[i][0]>>data[i][1]>>data[i][2];
+    }
+
+    ins>>num_col;
+    assert(num_col == N);
+
+    for(int i=0; i<(int)N; i++)
+    {
+	ins>>vertex[i]>>color[i];
+    }
+}
+
+//--------------------------------------------------------------------
+//Converts arrays from read_data into pixel coordinates
+void convert_data(int datanew[M][3], double data[M][3])
+{
+    int i;
+    for(i=0; i<=(int)M; i++)
+    {
+
+        datanew[i][0]=pixel(data[i-1][0], WMAX, -WMAX, 0, S);
+	datanew[i][1]=pixel(data[i-1][1], WMAX, -WMAX, 0, S);
+	datanew[i][2]=pixel(data[i-1][2], WMAX, -WMAX, 0, S);
+
+    }
+}
+
+//----------------------------------------------------------------------
+//Connects lines using moveto and lineto depending on the value of
+//color. There was also a red/multicolor line that wouldn't go away, so
+//a solution was found. - Make sure that color[0] is 0.
+void draw_ship(int datanew[][3], unsigned int vertex[], int color[])
+{
+    int i;
+    int x0;
+    int y0;
+    
+    for(i=0; i<(int)N; i++)
+    {
+	
+	x0 = datanew[vertex[i]][0];
+	y0 = datanew[vertex[i]][1];
+	
+	color[0] = 0; //This is to get rid of an annoying red line
+	
+	if(color[i] == 0)
+	{
+	    moveto(x0, y0);
+	}
+	else
+	{
+	    setcolor(color[i]);
+	    lineto(x0, y0);
+	}
+    }
+}
+
+//------------------------------------------------------------------------------
+//This function defines what keys do in the program.
+void interact(double data[M][3])
+{
+    while (!kbhit( ))
+    {
+	delay(10);
+    }
+    switch (getch( ))
+    {
+    case '/':       transform(data, CLOCKWISE);        break;
+    case '\\':      transform(data, COUNTERCLOCKWISE); break;
+    case KEY_UP:    transform(data, UP);               break;
+    case KEY_DOWN:  transform(data, DOWN);             break;
+    case KEY_LEFT:  transform(data, LEFT);             break;
+    case KEY_RIGHT: transform(data, RIGHT);            break;
+    case '+':       transform(data, ZOOMIN);           break;
+    case '-':       transform(data, ZOOMOUT);          break;
+    }
+}
+
+//-----------------------------------------------------------------------------
+//This function computes the matrix,
+//using foreign and obsure chique words.
+void transform(double data[M][3], const double matrix[3][3])
+{
+    unsigned int i;
+    unsigned int j;
+    double nouveau[3];
+    
+    for (i=0; i<M; i++)
+    {
+	for (j=0; j<3; j++)
+	{
+	    //nouveau is french for new. It's hip.
+	    //This also sums the products of the matrix
+	    nouveau[j] = ((data[i][0] * matrix[0][j])+
+			  (data[i][1] * matrix[1][j])+
+			  (data[i][2] * matrix[2][j]));
+	}
+//store the values in data[][]
+	data[i][0] = nouveau[0];
+	data[i][1] = nouveau[1];
+	data[i][2] = nouveau[2];
+    }
+}
