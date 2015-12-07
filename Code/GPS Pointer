@@ -1,0 +1,943 @@
+/****** ASEN 4519 Final Project PIC GPS Pointer ******************************************************
+
+ 
+ *Author: Dustin Larsen Karsen Donati-Leach
+ * Date  : 11/6/14
+ *
+ * Description
+ * On power up exceute the following sequence:
+ *      D2 ON for 0.5s +/- 10ms then off
+ *      D3 ON for 0.5s +/- 10ms then off
+ *      D4 ON for 0.5s +/- 10ms then off
+ * The following then occurs forever:
+ *      D6 blinks: 100ms +/- 10ms ON, then 900ms +/- 10ms OFF
+ *      LCD Displays the following lines:
+ *          'T=xx.xF'
+ *          'PT=x.xxV'
+ *      Where the 'x' is replaced by a digit in the measurement.
+ *          Temperature data must be calculated / displayed with one digit to
+ *          the right of the decimal as shown.  The sensor itself can have
+ *          errors up to +/- 5 degrees Fahrenheit.
+ *          Potentiometer data must be calculated / displayed with two digits
+ *          to the right of the decimal as shown.
+ *          These measurements must be refreshed at LEAST at a frequency of 5Hz.
+ *      USART Commands are read / executed properly. '\n' is a Line Feed char (0x0A)
+ *          ASEN 4519:
+ *              'TEMP\n'     - Transmits temperature data in format: 'XX.XF'
+ *              'POT\n'      - Transmits potentiometer data in format: X.XXV'
+ *          ASEN 5519: Same as ASEN 4519, plus two additional commands
+ *              'CONT_ON\n'  - Begins continuous transmission of data over USART
+ *              'CONT_OFF\n' - Ends continuous transmission of data over USART
+ *
+ *              Continous transmission should output in the following format:
+ *                  'T=XX.XF; PT = X.XXV\n'
+ *******************************************************************************
+ *
+ * Program hierarchy
+ *
+ * Mainline
+ *   Initial
+ *
+ * HiPriISR (included just to show structure)
+ *
+ * LoPriISR
+ *   TMR0handler
+ ******************************************************************************/
+
+
+#include <p18cxxx.h>
+#include "LCDroutines.h"
+#include "delays.h"
+#include "stdio.h"
+#include "math.h"
+#include "stdlib.h"
+#pragma config FOSC=HS1, PWRTEN=OFF, BOREN=ON, BORV=2, PLLCFG = OFF
+#pragma config WDTEN=OFF, CCP2MX=PORTC, XINST=OFF
+
+/******************************************************************************
+ * Global variables
+ ******************************************************************************/
+//State 1
+const rom far char LCDRow1[] = {0x80,'G','E','S','T','I','N','G','!',0x00};
+char CLEARLCD1[] = {0x80,' ',' ',' ',' ',' ',' ',' ',' ',0x00}; //Desired Longitude
+char CLEARLCD2[] = {0xC0,' ',' ',' ',' ',' ',' ',' ',' ',0x00};
+char LatDstring[] = {0x80,'x','x','x','x','x','x','x','x',0x00}; //Desired Latitude
+char LonDstring[] = {0xC0,'x','x','x','x','x','x','x','x',0x00}; //Desired Longitude
+//State 2
+//    latC = 4000.63864;
+//    lonC = -10526.13984;
+char LatCstring[] = {0x80,'x','x','x','x','x','x','x','x',0x00};//'4','0','0','0','.','6','3','8','6',0x00}; //Current lattitude
+char LonCstring[] = {0xC0,'x','x','x','x','x','x','x','x',0x00};//'-','1','0','5','2','6','.','1','3','9',0x00}; //Current Longitude
+//State 3
+char AngleString[] = {0x80,'x','x','x','.','x','x','x','d',0x00}; //(xx.x)'x','x','.','x' buff(1),buff(2),'.',buff(3)const
+unsigned int Switchstate;
+char buff[10];
+char buff1[10];
+unsigned int Alive_count = 0;
+float temperature = 0;
+char buffer[3];
+char temporary;
+char UARTbuffer[73];
+int INDEX;
+int i;
+int numstep;
+float stepfloat;
+int stepint;
+int origin;
+float latdiff;
+float londiff;
+float latD;
+float latC;
+float lonD;
+float lonC;
+long int latDf;
+long int latCf;
+long int lonDf;
+long int lonCf;
+float anglefromorigin;
+float anglefromnorth;
+long int anglefromnorth2;//long int
+int parsecount;
+int proceed = 0;
+char temp[6];
+char temp2;
+char GLLdata[47];
+int j = 0;
+int k;
+int p;
+int o;
+char lattemp[11];
+char lontemp[11];
+char pos;
+int m;
+
+
+/******************************************************************************
+ * Function prototypes
+ ******************************************************************************/
+void Initial(void);         // Function to initialize hardware and interrupts
+void HiPriISR(void);
+void LoPriISR(void);
+void TMR0handler(void);     // Interrupt handler for TMR1
+void CCP1handler(void);
+void ReceiveHandler(void);
+//void ReceiveHandler1(void);
+void ADCconverter(void);
+void StepMotorControl( void );
+void AngleCalculation(void);//;float latD, float lonD, float latC, float lonC);
+void PWMfunction(void);
+void ParseGPSdata(void);
+void parseLatLon(void);
+void LCDswitch(void);
+char find_comma(char array[], char last_comma_location);
+
+#pragma code highVector=0x08
+void atHighVector(void)
+{
+ _asm GOTO HiPriISR _endasm
+}
+#pragma code
+
+#pragma code lowVector=0x18
+void atLowVector(void)
+{
+ _asm GOTO LoPriISR _endasm
+}
+#pragma code
+
+/******************************************************************************
+ * main()
+ ******************************************************************************/
+void main() {
+     Initial();                 // Initialize everything
+     
+     
+     while(1) {
+         //DisplayC(LCDRow1);
+         //Switches display state between three modes.
+         LCDswitch();
+         //PWMfunction(5);
+
+         //PWMfunction(400);
+        // Sit here for ever
+         //StepMotorControl();
+         //Delay1KTCYx(250);
+         //StepMotorControl(60);
+
+//         temporary = RCREG2;
+         //Delay10KTCYx(250);
+//         TXREG1 = temporary;
+//         Delay10KTCYx(250);
+//         TXREG1 = 'E';
+//         while(PIR3bits.RC2IF == 1)
+//         {
+//
+//         }
+//         TXREG1 = RCREG2;
+//         while(PIR1bits.TX1IF  == 1)
+//         {
+//
+//         }
+
+
+         //DisplayV(LCDROWTemp);
+     }
+}
+
+/******************************************************************************
+ * Initial()
+ *
+ * This subroutine performs all initializations of variables and registers.
+ * It enables TMR1 and sets CCP1 for compare, and enables LoPri interrupts for
+ * both.
+ ******************************************************************************/
+void Initial() {
+    
+    TRISB  = 0b00001111;
+    LATB = 0;
+    TRISC  = 0b10010011;
+    LATC = 0;
+    TRISG = 0b00000100;
+    LATG = 0;
+    TRISDbits.TRISD3 = 1;
+    Switchstate = 0;
+    
+
+    TXSTA1 = 0b00000100;
+    RCSTA1 = 0b00000000;
+    BAUDCON1 = 0b00000000;
+    SPBRG1 = 64;
+
+    TXSTA2 = 0b00000100;
+    RCSTA2 = 0b00000000;
+    BAUDCON2 = 0b00000000;//bit 5 is active high
+    SPBRG2 = 64;
+
+    // Configure the LCD pins for output
+    LCD_RS_TRIS   = 0;
+    LCD_E_TRIS    = 0;
+    LCD_DATA_TRIS = 0b00001111;     // Note the LCD is only on the upper nibble
+                                    // The lower nibble is all inputs
+
+    // Initialize the LCD and print to it
+    InitLCD();
+
+
+    //LCD on for 0.5s
+    LATBbits.LATB5 = 1;
+    Delay10KTCYx(125);
+    LATBbits.LATB5 = 0;
+    LATBbits.LATB6 = 1;
+    Delay10KTCYx(125);
+    LATBbits.LATB6 = 0;
+    LATBbits.LATB7 = 1;
+    Delay10KTCYx(125);
+    LATBbits.LATB7 = 0;
+
+    // Initializing TMR0
+    T0CON = 0b01001000;             // 8-bit, Fosc / 4, no pre/post scale timer
+    TMR0L = 0;                      // Clearing TMR0 registers
+    TMR0H = 0;
+
+    // Configuring Interrupts
+    RCONbits.IPEN = 1;              // Enable priority levels
+    INTCON2bits.TMR0IP = 0;         // Assign low priority to TMR0 interrupt
+
+    INTCONbits.TMR0IE = 1;          // Enable TMR0 interrupts
+
+    T0CONbits.TMR0ON = 1;           // Turning on TMR0
+
+    TXSTA1bits.TXEN = 1;
+    PIE1bits.RC1IE = 1;
+    IPR1bits.RC1IP = 0;
+    RCSTA1bits.SPEN = 1;
+    RCSTA1bits.CREN = 1;
+
+    TXSTA2bits.TXEN = 1;
+    PIE3bits.RC2IE = 1;
+    IPR3bits.RC2IP = 0;
+    RCSTA2bits.SPEN = 1;
+    RCSTA2bits.CREN = 1;
+
+    TRISCbits.TRISC2 = 0;
+    TRISCbits.TRISC1 = 0;
+    LATCbits.LATC1 = 1;
+
+    //PIR3bits.RC2IF = 0;
+   // temp = RCREG2;
+    //INTCONbits.GIEL = 1;            // Enable low-priority interrupts to CPU
+    //INTCONbits.GIEH = 1;            // Enable all interrupts
+    RCSTA2bits.CREN = 0;
+    RCSTA2bits.CREN = 1;
+
+    numstep = 0;
+    origin = 0;
+    latdiff = 0;
+    londiff = 0;
+    latD = 0;
+    //latC = 0;
+    lonD = 0;
+    //lonC = 0;
+    //latC = 4000.63864;
+    //lonC = -10526.13984;
+    anglefromorigin = 0;
+    parsecount = 0;
+    pos = 0;
+    p = 0;
+    o = 0;
+    stepfloat = 0;
+    stepint = 0;
+    anglefromnorth2 = 0;
+    for(k = 0; k < 12; k++)
+    {
+        lattemp[k] = 0;
+    }
+
+    for(k = 0; k < 12; k++)
+    {
+        lontemp[k] = 0;
+    }
+    for(k = 0; k < 6; k++)
+    {
+        temp[k] = 0;
+    }
+
+
+    TXREG1 = 'H';
+   
+    Delay10KTCYx(125);
+    //input values for current location
+    for(m = 0; m < 11;m++)
+    {
+        buff[m] = 0;
+        buff1[m] = 0;
+    }
+}
+
+/******************************************************************************
+ * HiPriISR interrupt service routine
+ *
+ * Included to show form, does nothing
+ ******************************************************************************/
+#pragma interrupt HiPriISR
+void HiPriISR() {
+
+}	// Supports retfie FAST automatically
+
+/******************************************************************************
+ * LoPriISR interrupt service routine
+ *
+ * Calls the individual interrupt routines. It sits in a loop calling the required
+ * handler functions until until TMR1IF and CCP1IF are clear.
+ ******************************************************************************/
+#pragma interruptlow LoPriISR nosave=TBLPTR, TBLPTRU, TABLAT, PCLATH, PCLATU, PROD, section("MATH_DATA")//, section(".tmpdata")
+void LoPriISR() {
+    while(1) {
+        if( INTCONbits.TMR0IF )
+        {
+            TMR0handler();
+            continue;
+        }
+        if( PIR3bits.CCP1IF ) {
+            CCP1handler();
+            continue;
+        }
+//        if( PIR3bits.RC2IF == 1)
+//        {
+//            ReceiveHandler();
+//            continue;
+//        }
+        if (PIR1bits.RC1IF == 2)
+        {
+
+           ParseGPSdata();
+           if (proceed == 1)
+           {
+
+              ReceiveHandler();
+              if (temp2 == 'r')
+              {
+                  //store entire data string as variable
+                  proceed = 0;
+                  parsecount = 0;
+                  j = 0;
+
+                  parseLatLon();
+                  //hard code in current GPS location? could we choose if we
+                  //reading in current location data or desired? if not one needs to be hardcoded
+                  AngleCalculation();   
+                  PWMfunction();
+                  latdiff = 0;
+                  londiff = 0;
+                  latD = 0;
+                  lonD = 0;
+                  pos = 0;
+                  anglefromorigin = 0;
+                  anglefromnorth = 0;
+                  stepfloat = 0;
+                  stepint = 0;
+                  origin = 0;
+                  for(p = 0; p < 48; p++)
+                  {
+                     GLLdata[p] = 0;
+                  }
+                  for(o = 0; o < 7; o++)
+                  {
+                      temp[o] = 0;
+                  }
+              }
+              else
+              {
+                  //store next character
+                  GLLdata[j] = temp2;
+                  j++;
+
+              }
+           }
+
+
+
+           continue;
+
+        }
+        break;
+        }
+    }
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ * Change the temporary data section for all code following this #pragma
+ * statement. Normally the compiler/linker uses .tmpdata section for all non
+ * ISR code and a separate tempdata section for each ISR (Hi and Lo). However,
+ * when your primary ISR calls other functions the called functions share the
+ * .tmpdata section with the main code. This can cause issues, just like not
+ * saving WREG, STATUS and BSR. There are two options:
+ *
+ *   1. have the ISR save the .tmpdata section. This may have large effects on
+ *      latency
+ *   2. Force the functions called by the ISR to have their own temp data
+ *      section.
+ *
+ * We are using option 2. However, this means that no main code functions can
+ * appear after the following pragma, unless you change the temp data section
+ * back.
+ *
+ * The temp data section is used for complex math operations such as
+ * a = b*c + d*e so you may not need a temp data section depending on what
+ * you are doing.
+ *
+ * Keep in mind you may have the same issue with the MATH_DATA section.
+ * MATH_DATA is used for arguments, return values and temporary locations
+ * for math library functions.
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+#pragma tmpdata handler_temp
+
+/******************************************************************************
+ * TMR1handler interrupt service routine.
+ *
+ * Handles Alive LED Blinking via counter
+ ******************************************************************************/
+void TMR0handler() {
+    if( Alive_count < 977 ) { Alive_count++; }
+
+    else if(Alive_count == 977)
+    {
+        LATBbits.LATB4 = 1;
+        Alive_count++;
+    }
+
+    else if(Alive_count < 9766) {Alive_count++;}
+
+    else if(Alive_count == 9766)
+    {
+        LATBbits.LATB4 = 0;
+        Alive_count = 0;
+    }
+    INTCONbits.TMR0IF = 0;      //Clear flag and return to polling routine
+}
+
+void CCP1handler(void) {
+    PIR3bits.CCP1IF = 0;
+
+}
+void ReceiveHandler(void)
+{
+
+    if( RCSTA1bits.FERR == 1)
+    {
+        temp2 = RCREG1;
+        return;
+    }
+
+    if(LATBbits.LATB5 == 1)
+    {
+        LATBbits.LATB5 = 0;
+    }
+    else
+    {
+        LATBbits.LATB5 = 1;
+    }
+
+    if( RCSTA1bits.OERR == 1)
+    {
+        RCSTA1bits.CREN = 0;
+        RCSTA1bits.CREN = 1;
+    }
+
+//    TXREG1 = 'G';
+//    Delay10TCYx(25);
+
+    temp2 = RCREG1;
+    TXREG1 = temp2;
+    Delay10TCYx(25);
+}
+//void ReceiveHandler()
+//{
+//    unsigned char temp;
+//    unsigned char temp2;
+//    if( RCSTA2bits.FERR == 1)
+//    {
+//        temp2 = RCREG2;
+//        return;
+//    }
+//
+//    if(LATBbits.LATB6 == 1)
+//    {
+//        LATBbits.LATB6 = 0;
+//    }
+//    else
+//    {
+//        LATBbits.LATB6 = 1;
+//    }
+//
+//    if( RCSTA2bits.OERR == 1)
+//    {
+//        RCSTA2bits.CREN = 0;
+//        RCSTA2bits.CREN = 1;
+//    }
+//
+//    temp = RCREG2;
+//    TXREG1 = temp;
+//    Delay10TCYx(25);
+//
+//}
+
+//void StepMotorControl( void )
+//{
+//    //convert degrees to number of steps
+//    char x = 30;
+//    numstep = ((200/360)*x);
+//    origin = (200)-numstep;
+//    //limitation on how fast to send steps?
+//    //step to desired angle
+//    while (x > 0)
+//    {
+//        LATCbits.LATC2 = 1;
+//        Delay10TCYx(1);
+//        LATCbits.LATC2 = 0;
+//        x = x--;
+//    }
+//    //hold position
+//    Delay10KTCYx(255);
+//
+//
+//    //return to origin
+////    while (origin > 0)
+////    {
+////        LATCbits.LATC2 = 1;
+////        Delay10TCYx(10);
+////        LATCbits.LATC2 = 0;
+////        origin = origin--;
+////    }
+//}
+
+
+void AngleCalculation(void)
+{
+    latdiff = latD - latC;
+    londiff = lonD - lonC;
+    anglefromorigin = atan2 (latdiff, londiff);
+    anglefromorigin = anglefromorigin*(180/3.14159);
+
+
+    if(anglefromorigin < 0)
+    {
+        anglefromnorth = -1*(anglefromorigin - 90);
+    }
+    else if(anglefromorigin > 0 && anglefromorigin < 90)
+    {
+        anglefromnorth = 90 - anglefromorigin;
+    }
+    else if(anglefromorigin > 90)
+    {
+        anglefromnorth = 360 - (anglefromorigin - 90);
+    }
+
+    // anglefromorigin = anglefromorigin*???
+    //return anglefromorigin;
+}
+
+void PWMfunction(void)
+{
+    stepfloat = (200*anglefromnorth)/360;
+    stepint = (int)stepfloat;
+    origin = (200)-stepint;
+    while(stepint > 0)
+    {
+        LATCbits.LATC2 = 1;
+        Delay100TCYx(125);
+        LATCbits.LATC2 = 0;
+        Delay100TCYx(125);
+        stepint--;
+    }
+
+    Delay10KTCYx(255);
+    Delay10KTCYx(255);
+
+    while(origin > 0)
+    {
+        LATCbits.LATC2 = 1;
+        Delay100TCYx(125);
+        LATCbits.LATC2 = 0;
+        Delay100TCYx(125);
+        origin--;
+    }
+
+
+
+
+}
+
+       //recive data parse and look for $GPGLL,3723.2475,N,12158.3416,W,161229.487,A,A*41
+ void ParseGPSdata(void) //char parse[])
+        {
+          //Check for framing error
+          if(RCSTA2bits.FERR == 1 )
+          {
+              temp2 = RCREG1;
+              return;
+          }
+          //check for overrun error (needs to reset the devide if error is detected
+          if (RCSTA2bits.OERR == 1)
+          {
+              RCSTAbits.CREN = 0;
+              RCSTAbits.CREN = 1;
+          }
+           // if current byte in RCREG is $ signal to begin looking at rest of data section
+           // for (j = 0;j<strlen(parse);j++)
+            //how do we get the string to parse
+            //store entire string of all commands and then look within that array for correct data
+
+            temp[pos] = RCREG1;
+//            if (temp == '$')
+//            {
+//                parsecount = 1;
+//            }
+
+
+           if (temp[0] == '$' && parsecount == 0)
+            {
+                parsecount++;
+                pos++;
+           }
+            
+               if (temp[1] == 'G' && parsecount == 1)
+                {
+                    parsecount++;
+                    pos++;
+               }
+            
+                    if (temp[2] == 'P' && parsecount == 2)
+                    {
+                        parsecount++;
+                        pos++;
+                    }
+
+                        if (temp[3] == 'G' && parsecount == 3)
+                        {
+                            parsecount++;
+                            pos++;
+                        }                          //continue;
+            
+                            if (temp[4] == 'L' && parsecount == 4)
+                            {
+                                parsecount++;
+                                pos++;
+                            }                         //continue;//break;
+            
+                                if (temp[5] == 'L' && parsecount == 5)
+                                {
+                                // sends go ahead to store rest of data message for manipulation
+                                    parsecount++;
+                                    pos++;
+                                    //return;
+                                }
+
+
+            if(parsecount == 6)
+            {
+                proceed = 1;
+            }
+
+                //recieve from usart1
+               // temp = RCREG1;
+//            switch(parsecount)
+//                {
+//                   case 0 :
+//                        if (temp == '$')
+//                        {
+//                            (parsecount)++;
+//                            //proceed = 0;
+//                            //return;
+//                            //continue;//
+//                            break;
+//                        }
+//                    case 1 :
+//                        if (temp == 'G')
+//                        {
+//                            (parsecount)++;
+//                            //proceed = 0;
+//                            //return;
+//                            //continue;//
+//                            break;
+//                        }
+//                    case 2 :
+//                        if (temp == 'P')
+//                        {
+//                            (parsecount)++;
+//                            //proceed = 0;
+//                            break;                            //continue;//break;
+//                        }
+//                    case 3 :
+//                        if (temp == 'G')
+//                        {
+//                            (parsecount)++;
+//                            //proceed = 0;
+//
+//                            break;                            //continue;
+//                        }
+//                    case 4 :
+//                        if (temp == 'L')
+//                        {
+//                            (parsecount)++;
+//                            //proceed = 0;
+//
+//                            break;                            //continue;//break;
+//                        }
+//                    case 5 :
+//                        if (temp == 'L')
+//                        {
+//                        // sends go ahead to store rest of data message for manipulation
+//                            (parsecount)++;
+//                            proceed = 1;
+//                            break;
+//                        }
+//                default:
+//                {
+//                    break;
+//                }
+//                }
+       }
+//turn string ino lat and long float values
+  // do we need W-E or N-S indicator?
+ void parseLatLon(void)
+ {
+     char comma_location = 0;
+     char comma_location2 = 0;
+     char comma_location3 = 0;
+     char comma_location4 = 0;
+
+
+     comma_location = find_comma(GLLdata, 0);
+     comma_location2 = find_comma(GLLdata, comma_location);
+
+     for(i = (comma_location+1); i < comma_location2; i++)
+     {
+        lattemp[i-(comma_location+1)] = GLLdata[i];
+     }
+
+     comma_location3 = find_comma(GLLdata, comma_location2);
+     comma_location4 = find_comma(GLLdata, comma_location3);
+
+     for(i = (comma_location3+1);i<comma_location4;i++)
+     {
+     lontemp[i-(comma_location3+1)] = GLLdata[i];
+    }
+
+     //double atof ( const char * s )
+     latD = atof( lattemp );
+     lonD = atof( lontemp );
+     if(GLLdata[comma_location4+1] == 'W')
+     {
+     lonD = lonD*-1;
+     }
+     if(GLLdata[comma_location2+1] == 'S')
+     {
+     latD = latD*-1;
+     }
+     //display lattitude and longitude on LCD
+
+ }
+
+char find_comma(char array[], char last_comma_location)
+{
+   char l;
+   //strlen
+   for (l=(last_comma_location+1); l < 47; l++)
+   {
+	 if (array[l] == ',')
+	 {
+             return l;
+	 }
+   }
+}
+
+
+void LCDswitch(void)
+ {
+       if(PORTDbits.RD3 == 0)
+       {
+           while(1)
+               if (PORTDbits.RD3 == 1)
+               {
+                   Switchstate++;
+                   DisplayV(CLEARLCD1);
+                   DisplayV(CLEARLCD2);
+                   if(Switchstate == 3)
+                   {
+                       Switchstate = 0;
+                   }
+                   break;
+               }
+       }
+        switch(Switchstate)
+                {
+                    case 0 :
+                        latC = 4000.63864;
+                        lonC = -10526.13984;
+                        latCf = (long int)(latC*100000);
+                        lonCf = (long int)(lonC*100000);
+                        //displays disired location on LCD
+
+                        for(m = 0; m < 11;m++)
+                        {
+                            buff[m] = 0;
+                            buff1[m] = 0;
+                        }
+                        //convert
+
+                        sprintf(buff, (const rom far char *)"%ld",latCf);
+                        sprintf(buff1, (const rom far char *)"%ld",lonCf);
+                         //Passing string into LCD array
+                        //one of these needs to be to be left out for decimal place(Alternative?)
+
+                        LatCstring[1] = buff[0];
+                        LatCstring[2] = buff[1];
+                        LatCstring[3] = buff[2];
+                        LatCstring[4] = buff[3];
+                        LatCstring[5] = buff[4];
+                        LatCstring[6] = buff[5];
+                        LatCstring[7] = buff[6];
+                        LatCstring[8] = buff[7];
+
+
+                        LonCstring[1] = buff1[0];
+                        LonCstring[2] = buff1[1];
+                        LonCstring[3] = buff1[2];
+                        LonCstring[4] = buff1[3];
+                        LonCstring[5] = buff1[4];
+                        LonCstring[6] = buff1[5];
+                        LonCstring[7] = buff1[6];
+                        LonCstring[8] = buff1[7];
+
+                        
+
+                        DisplayV(LatCstring);
+                        DisplayV(LonCstring);
+                        //turn on LEDS for mode 1
+                        
+                        LATBbits.LATB5 = 1;
+                        LATBbits.LATB6 = 0;
+                        LATBbits.LATB7 = 0;
+                        break;
+
+                    case 1 :
+
+                        for(m = 0; m < 11;m++)
+                        {
+                            buff[m] = 0;
+                            buff1[m] = 0;
+                        }
+                        latD = 5000.44427;
+                        lonD = -20526.48404;
+                        latDf = (long int)(latD*100000);
+                        lonDf = (long int)(lonD*100000); //(int)
+                        //Dispalys current location
+                        sprintf(buff, (const rom far char *)"%ld",latDf);
+                        sprintf(buff1, (const rom far char *)"%ld",lonDf);
+
+
+                        LatDstring[1] = buff[0];
+                        LatDstring[2] = buff[1];
+                        LatDstring[3] = buff[2];
+                        LatDstring[4] = buff[3];
+                        LatDstring[5] = buff[4];
+                        LatDstring[6] = buff[5];
+                        LatDstring[7] = buff[6];
+                        LatDstring[8] = buff[7];
+
+
+                        LonDstring[1] = buff1[0];
+                        LonDstring[2] = buff1[1];
+                        LonDstring[3] = buff1[2];
+                        LonDstring[4] = buff1[3];
+                        LonDstring[5] = buff1[4];
+                        LonDstring[6] = buff1[5];
+                        LonDstring[7] = buff1[6];
+                        LonDstring[8] = buff1[7];
+
+
+                        DisplayV(LatDstring);
+                        DisplayV(LonDstring);
+                        //turn on LEDS for mode 2
+                        
+                        LATBbits.LATB5 = 1;
+                        LATBbits.LATB6 = 1;
+                        LATBbits.LATB7 = 0;
+                        break;
+
+                    case 2 :
+                        //Displays calculated angle
+                        //converts anglefrom origin to int by first removing decimal place
+
+                        for(m = 0; m < 11;m++)
+                        {
+                            buff[m] = 0;
+                            buff1[m] = 0;
+                        }
+
+                        anglefromnorth2 = 0;
+                        anglefromnorth = 70.586;
+                        
+                        anglefromnorth2 = (long int)1000*anglefromnorth;
+
+                        sprintf(buff,(const rom far char *)"%ld",anglefromnorth2); //(const rom far char *)
+                        AngleString[1] = buff[0];
+                        AngleString[2] = buff[1];
+                        AngleString[3] = buff[2];
+                        //AngleString[5] is the decimal
+                        AngleString[5] = buff[3];
+                        AngleString[6] = buff[4];
+                        AngleString[7] = buff[5];
+                        //turn on LEDS for mode 3
+                       
+                        LATBbits.LATB5 = 1;
+                        LATBbits.LATB6 = 1;
+                        LATBbits.LATB7 = 1;
+                        DisplayV(AngleString);
+                        break;
+
+        }
+ }
+
+
