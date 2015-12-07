@@ -2,7 +2,7 @@
 
 ##### Monday night rolls around and that frozen pizza dinner is staring you in the face once again. But it's time for a face-off. Try Chef Nico's ~~famous~~ pizza recipe on for size. This nearly-impossible to mess up recipe is guaranteed to impress those who ever doubted you as a culinary wonder.
 
-#### Ingredients:
+#### Ingredients
 * Pizza crust
 * Pizza sauce (if you feel like making your own, check out [this delicious recipe])
 * Grated cheese (mozzarella, cheddar, provolone and pepper jack make for a great mix)
