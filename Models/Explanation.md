@@ -1,0 +1,1 @@
+I have extensive experience with Solidworks and Google Sketchup. I am very new to GitHub and cannot figure out how to put pictures on this website. I sent an example of a model I created in solidoworks in an email to Toni Klopfenstein. I have many more examples of my work if further reference is needed.
