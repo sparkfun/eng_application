@@ -9,6 +9,7 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
   - Condensed milk for extra richness and sweetness (optional)
   - and/or regular milk, for extra richness (not pictured, optional)
   - Powdered Milo mix
+![alt text](https://github.com/Munnu/eng_application/blob/master/Documentation/images/1%20Milo%20Items.jpg "Logo Title Text 1")
   
 ### Step 1: Boil the water in the kettle 
   1. For hot Milo, a kettle is needed to ensure solubility of the chocolate crystals.
