@@ -27,7 +27,6 @@ If you haven't heard of Milo, it's okay! It's an Australian chocolate malt drink
 ![Setting up powdered Milo in your mug](https://github.com/Munnu/eng_application/blob/master/Documentation/images/4%20Milo%20Powder%20and%20Cup.jpg "Setting up powdered Milo in your mug")
 
 1. While the kettle is boiling, scoop out 2-3 (4 max) teaspoons full of Milo powder (for a 4~8 inch mug).
-
 ![What a spoonful of Milo powder looks like](https://github.com/Munnu/eng_application/blob/master/Documentation/images/5%20Milo%20Spoonful.jpg "Spoonful of Milo Powder")
 
 2. Don't be like me. Try not to eat off all of the dry Milo. Though, it's okay if you do.
