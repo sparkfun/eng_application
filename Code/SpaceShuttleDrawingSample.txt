@@ -1,0 +1,96 @@
+//File: shuttle3D.cxx Written by Nicolas Cosca on 04/29/2012
+//Edited by Nicolas Cosca on 12/6/2015
+//nicolas.cosca@colorado.edu
+//This program uses data from a file to construct a 3d model
+//of a shuttle by connecting vertices together using arrays and
+//loops. Then you can move it using your keyboard.
+//(i.e. zoom in and out, and pan around using the keyboard)
+//This program requires having the shuttle.dat file
+
+
+//Directives
+#include<graphics.h>
+#include<iostream>
+#include<cstdlib>
+#include <fstream>
+#include<cmath>
+#include<cassert>
+#include<iomanip>
+
+using namespace std;
+//--------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------
+//Named Constants
+const size_t M = 522;
+const size_t N = 891;
+const int S = 500;
+const double WMAX = 14000.0;
+
+// Constants used in the transformation matrices:
+const double ANGLE = M_PI/100;
+const double SIN = sin(ANGLE);
+const double COS = cos(ANGLE);
+const double ZOOM = 1.1;
+
+// The transformation matrices:
+const double ZOOMIN[3][3] =           {{ZOOM, 0, 0}, {0, ZOOM, 0}, {0, 0, ZOOM}};
+const double ZOOMOUT[3][3] =          {{1/ZOOM, 0, 0}, {0, 1/ZOOM, 0},
+				       {0, 0, 1/ZOOM}};
+const double CLOCKWISE[3][3] =        {{COS, -SIN, 0}, {SIN, COS, 0}, {0, 0, 1}};
+const double COUNTERCLOCKWISE[3][3] = {{COS, SIN, 0}, {-SIN, COS, 0}, {0, 0, 1}};
+const double DOWN[3][3] =             {{1, 0, 0}, {0, COS, -SIN}, {0, SIN, COS}};
+const double UP[3][3] =               {{1, 0, 0}, {0, COS, SIN}, {0, -SIN, COS}};
+const double RIGHT[3][3] =            {{COS, 0, SIN}, {0, 1, 0}, {-SIN, 0, COS}};
+const double LEFT[3][3] =             {{COS, 0, -SIN}, {0, 1, 0}, {SIN, 0, COS}};
+
+// Function Prototypes:
+//-----------------------------------------------
+// pixel(wx, wmin, wmax, pmin, pmax) converts wx from an interval that
+// ranges from wmin to wmax into an integer interval that ranges
+// from pmin to pmax
+int pixel(double wx, double wmin, double wmax, int pmin, int pmax);
+//This function reads and stores data in arrays
+void read_data(double data[M][3], unsigned int vertex[N], int color[N]);
+//This function converts the arrays into pixel coordinates
+void convert_data(int datanew[M][3], double data[M][3]);
+//This function connects the points using color as an indication whether to
+//use lineto or moveto
+void draw_ship(int datanew[M][3], unsigned int vertex[N], int color[N]);
+//This function takes the user input from keystrokes and pans the image
+//accordingly
+void interact(double data[M][3]);
+//This function computes a matrix that contains the coordinates of the
+//ship needed to move it
+void transform(double data[M][3], const double matrix[3][3]);
+
+int main()
+{
+    double data[M][3];
+    unsigned int vertex[N];
+    int color[N];
+    int datanew[M][3];
+
+    initwindow(S, S, "Shuttle");
+    
+    //read and store data
+    read_data(data, vertex, color);
+
+//infinite loop
+    while(true)
+    {
+	clearviewport(); //clear viewport
+
+	convert_data(datanew, data); //convert data to pixel
+	
+//Draw ship (HW 8)
+	draw_ship(datanew, vertex, color);
+
+	swapbuffers(); 
+
+	//Set the keystrokes
+	interact(data); 
+  
+    }
+
+    return EXIT_SUCCESS;
