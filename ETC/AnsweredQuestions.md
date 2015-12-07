@@ -5,7 +5,7 @@ Let us get to know you a bit better. Please answer the following:
 
 1. When can you start?
 
- I could start in about 2 hours, although I still have some obligations towards school for a few more months.
+ I could start in about 2 hours, although I still have some minor obligations towards school for a few more months.
 
 2. What is your ideal weekly schedule?
 
@@ -13,7 +13,7 @@ Let us get to know you a bit better. Please answer the following:
 
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
-  I've been working for under $10.00/hour for a couple of years now. Even though the job is really fun, I've come to realize that $12.00/hour would already be a pretty awesome raise. That being said, my friend just got a job at an oil company making $102k/year, and I'm pretty sure we have similar experience. So I'd be open to having that conversation if you ever decide to branch out into the open-source oil business.
+  I've been working for under $10.00/hour for a couple of years now. Even though the job is really fun, I've come to realize that $12.00/hour would already be a pretty awesome raise. That being said, my friend just got a job at an oil company making $102k/year, and I'm pretty sure we have similar experience. I'd be open to having that conversation if you ever decide to branch out into the open-source oil business.
 
 4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?
 
