@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# A short little shell script to be used for the CS159 Course at Purdue University
+# The process for making each homework was very repetitive, so this script was
+# written to speed up the process.
+# Author: Vadim Nikiforov [GitHub account: Cobbled-Steel]
+#
+# License: GPLv2.0
+#
+
+# the submission script used for submititng homework assignments ouputs the name of most recent homework available to submit
+# use grep to capture that homework name, while piping in an invalid homework name to ensure that nothing is actually submitted
+hwName=$(echo notavalidname | ~cs15x/student/submit | grep -o  "hw[0-9][0-9]")
+
+echo "going to test for ~/prog/${hwName}/${hwName}.c" # notify the user what the script is doing
+  if [ -f ~/prog/${hwName}/${hwName}.c ]
+    then
+      echo "the hw exists!"
+    else
+      echo "the hw does not exist... Making the hw!"
+      cp ~/prog/templatehw.c ~/prog/templatehwtmp.c # copy a temporary modified template homework file
+      sed -i "s/HWNUMBER/${hwName}/" ~/prog/templatehwtmp.c # use sed to replace the default homework name with the proper one in the function header
+      cp ~/prog/templatehwtmp.c ~/prog/${hwName}/${hwName}.c # move the new template into the proper directory
+      rm ~/prog/templatehwtmp.c # remove the temporary template
+	fi 
+	vim ~/prog/${hwName}/${hwName}.c # bring the user straight into an amazing text editor
+
