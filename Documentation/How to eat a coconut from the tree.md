@@ -1,6 +1,6 @@
 # How to open and eat coconuts from the tree
 
-[!the finished product](/img/cocospoon)
+[!the finished product](/img/cocoSpoon)
 
 While I was at [Junga del Jaguar](http://www.jungladeljaguar.com/), a daily task was husking and opening coconuts.  It takes some elbow grease, but is rewarding.
 
@@ -19,5 +19,5 @@ Steps:
 ## Finding a good nut
 Find a relatively fresh coconut.  Look for one with a nice brown color, not too light and sunbleached, and not too wet or sprouting.  Make sure it's not too heavy, as they soak up water and can have bad bacteria or fungus growing.
 
-
+![the right one](/img/bestNut)
 
