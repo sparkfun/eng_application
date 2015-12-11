@@ -6,8 +6,8 @@ While I was at [Junga del Jaguar](http://www.jungladeljaguar.com/), a daily task
 
 Supplies needed:
 *   husking tool
-*   rock or something with hard edge
-*   knife or spoon
+*   rock or something with a hard edge
+*   knife and/or spoon
 *   (optional) [coconut shredder](http://www.desiclik.com/coconut-scrapper-w-vacuum-base-pr-18648.html)
 
 Steps:
