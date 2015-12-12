@@ -9,7 +9,7 @@ I could start as early as the first few weeks of January.
 
 2. What is your ideal weekly schedule?
 
-As a 20-hr per week job, I'd ideally like to work a couple full days and a half day.  In a perfect world that would be a half day on Wednesday, and full days on Thursday and Friday.  As full time, it would be nice to substitute working a weekend day for a weekday.
+As a 20-hr per week job, I'd ideally like to work a couple full days and a half day.  In a perfect world that would be a half day on Wednesday, and full days on Thursday and Friday.  However, I'm amenable to any schedule that works best for the team.  It would be nice to have one weekday I could take off if it was 20 hours per week.  As full time, it would be nice to substitute working a weekend day for a weekday, but again--whatever works best for the team is fine with me.
 
 3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)
 
