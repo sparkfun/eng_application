@@ -1,6 +1,6 @@
 # How to open and eat coconuts from the tree
 
-[!the finished product](img/cocoSpoon)
+[!the finished product](img/cocoSpoon.jpg)
 
 While I was at [Junga del Jaguar](http://www.jungladeljaguar.com/), a daily task was husking and opening coconuts.  It takes some elbow grease, but is rewarding.
 
