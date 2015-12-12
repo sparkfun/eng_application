@@ -1,14 +1,16 @@
 -- ***************************************************************************
--- I have other examples of coding I’ve done, I havent’ had time to polish all of it yet with proper commenting and all.
+-- I have other examples of coding I’ve done, I haven’t had time to polish all of it yet with proper commenting and all.
 --
 -- Particle Photon: https://github.com/wordsforthewise/photon-waterTankManager
-
+--
 -- Arduino: 
 -- https://github.com/wordsforthewise/DIY-AQM/blob/master/arduino-and-shinyeiPPD42NS/arduino-and-shinyeiPPD42NS.ino
-
+--
 -- Python: https://github.com/wordsforthewise/ocean-optics-OES
 -- https://github.com/wordsforthewise/nuvosun-python-lib
-
+--
+-- ***************************************************************************
+--
 -- thingspeak posting module for ESP8266 with nodeMCU (https://github.com/wordsforthewise/esp8266-send-thingspeak)
 --
 -- I have found with nodemcu devkits I sometimes need to compile the file
