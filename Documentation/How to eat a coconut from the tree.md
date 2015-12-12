@@ -43,7 +43,7 @@ Push hard and pry the husk off, with a satisfying sound like a combination of ri
 Coconuts are people too! See, they have faces.
 
 ## Crack the nut
-Once the nut is fully out of the husk, find something hard with an edge, like some concrete or a rock.  Hit the nut hard against the edge a few times to crack the nut in half.  Have a container handy if you want to save the juice inside, and it can sometimes come flying out.
+Once the nut is fully out of the husk, find something hard with an edge, like some concrete or a rock.  Hit the nut hard against the edge a few times to crack the nut in half.  Have a container handy if you want to save the juice inside, as it can sometimes come flying out.
 
 ![the rock](img/the rock.jpg)
 
@@ -55,7 +55,7 @@ Get a sharp knife and cut a v-shape into the edge of the meat, then push sideway
 
 ![using the knife](img/knife split.jpg)
 
-This will get meat out of the top edge.  The shell can be broken further by hitting it on or with a hard object, and meat further extracted in the same fasion.  A spoon can also be used to extract the meat.
+This will get meat out of the top edge.  The shell can be broken further by hitting it on or with a hard object, and meat further extracted in the same fashion with the knife, described above.  A spoon can also be used to extract the meat.
 
 ![using the spoon](img/cocoSpoon.jpg)
 
