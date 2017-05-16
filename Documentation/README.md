@@ -13,11 +13,11 @@ Before we get started, here are the minimum materials you would need to get star
 
 * [Manual Toothbrush (Soft Bristle)](https://oralb.com/en-us/products/pro-health-all-in-one-toothbrush)
 * [Toothpaste](http://www.colgatetotal.com/toothpaste/clean-mint)
-* Cup 
+* 8oz Cup 
 * Water
 * Mirror (optional)
 
-These products can be found at many grocery stores and online retailers. A mirror is not necessary when brushing your teeth. However, a mirror can help in brushing your teeth and checking for areas that may require more cleaning.
+These products can be found at many grocery stores and online retailers. Using a soft toothbrush is sufficient in removing food and bacteria attached to the surface of a tooth. Toothpaste will be used to help clean and strengthen teeth. A mirror is not necessary when brushing your teeth. However, a mirror can help in brushing your teeth and checking for areas that may require more cleaning.
 
 # How to Brush Your Teeth
 
