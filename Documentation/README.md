@@ -42,11 +42,15 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 
 1. With the toothbrush still in your dominant hand, place the bristles on your teeth. We will start with the top row's outer surface located at the back of your mouth.
 2. Brush you teeth gently using one of the brushing motions as explained above.
-2. Once the outer surface of the top row has been cleaned, move the brush toward your tongue with the bristles facing the chewing surface and continue brushing.
-3. After the chewing surface on the top row has been cleaned, move the brush further toward your teeth's inner surface while still aiming the bristles at your gum line and teeth.
-4. Continue repeating this process for all surfaces of your teeth so that both the top and bottom rows have been cleaned.
-5. Once you have cleaned your teeth, you may rinse out any remaining toothpaste with water. Fill your mouth with some water and swoosh it around to remove any food debris or bacteria that have loosened up.
-6. Spit out any remaining toothpaste from your mouth into the sink. 
+3. Once the outer surface of the top row has been cleaned, move the brush toward your tongue with the bristles facing the chewing surface and continue brushing.
+4. After the chewing surface on the top row has been cleaned, move the brush further toward your teeth's inner surface while still aiming the bristles at your gum line and teeth.
+5. Continue repeating this process for all surfaces of your teeth so that both the top and bottom rows have been cleaned.
+6. To prevent additional bacterial growth in your mouth, brush your tongue gently with the bristles.
+7. Once you have cleaned your teeth, you may rinse out any remaining toothpaste with water. Fill your mouth with some water and swoosh it around to remove any food debris or bacteria that have loosened up.
+8. Spit out any remaining toothpaste from your mouth into the sink. 
+
+The American Dental Association provides an excellent demo of [
+How to Brush Your Teeth](https://www.youtube.com/watch?v=xm9c5HAUBpY) through YouTube. 
 
 ### Maintaining Your Tools and Cleaning Up
 
