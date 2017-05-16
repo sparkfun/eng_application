@@ -17,13 +17,13 @@ Before we get started, here are the minimum materials you would need to get star
 * Water
 * Mirror (optional)
 
-These products can be found at many grocery stores and online retailers. Using a soft toothbrush is sufficient in removing food and bacteria attached to the surface of a tooth. Toothpaste will be used to help clean and strengthen teeth. A mirror is not necessary when brushing your teeth. However, a mirror can help in brushing your teeth and checking for areas that may require more cleaning.
+These products can be found at many grocery stores and online retailers. Using a soft toothbrush is sufficient in removing food and bacteria attached to the surface of a tooth. Toothpaste will be used to help clean and strengthen teeth. I personally use an 8oz cup but any size will do. A mirror is not necessary when brushing your teeth. However, it can help in brushing your teeth and checking for areas that may require more cleaning.
 
 # How to Brush Your Teeth
 
-Assuming that your right hand is the dominant hand while your left is the assistant hand, below are the steps to prepare your toothbrush and brush your teeth in the bathroom:
+We will assume that your right hand is the dominant hand and your left is the assistant hand. Below are the steps to prepare your toothbrush and brush your teeth in the bathroom.
 
-### Preparing Your Toothbrush
+### Preparing Your Tools
 Let us start by getting your tools set up.
 
 1. Fill a cup of warm water from the sink.
