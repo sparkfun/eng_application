@@ -1,6 +1,6 @@
 # Introduction
 
-Welcome to Bobby's guide for oral care! Food and bacteria can build up over time and wear down the enamel protecting our precious teeth. Below is an image indicating the enamel covering our teeth:
+Welcome to Bobby's guide for oral care! Food and bacteria can build up over time and wear down the enamel protecting our precious teeth. Below is an image indicating the enamel covering our teeth.
 
 <table><tr><th><div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Blausen_0863_ToothAnatomy_02.png/800px-Blausen_0863_ToothAnatomy_02.png" title="A Cross Section of a Tooth and Its Anatomy" width="50%"></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div></i></td></tr></table>
 &nbsp;
