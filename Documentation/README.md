@@ -53,6 +53,11 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 7. Once you have cleaned your teeth, you may rinse out any remaining toothpaste with water. Fill your mouth with some water and swoosh it around to remove any food debris or bacteria that have loosened up.
 8. Spit out any remaining toothpaste from your mouth into the sink. 
 
+<div align="center"><img src="http://pad1.whstatic.com/images/thumb/1/1e/Brush-Your-Teeth-Step-8-Version-3.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-8-Version-3.jpg" title="Toothbrush at a 45 Degree angle" width="50%"></div>
+
+<div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg">Wikivisual of wikiHow</a>.</div>
+
+
 The American Dental Association provides an excellent demo of [
 How to Brush Your Teeth](https://www.youtube.com/watch?v=xm9c5HAUBpY) on YouTube. 
 
