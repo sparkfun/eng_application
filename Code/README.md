@@ -21,6 +21,6 @@ License Information
 
 This project is _**open source**_! 
 
-Please review the LICENSE.md filefor license information. 
+Please review the LICENSE.md file for license information. 
 
 Distributed as-is; no warranty is given.
