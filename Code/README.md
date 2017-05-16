@@ -6,8 +6,8 @@ for a performance with Streetside Studio's bboys/bgirls on May 13th, 2017.
 Code Contents
 -------------------
 **<> Code**
-- **/XBee_ELSequencerV3** - Code used to receive character from a slave XBee and sequence each dancer's hoodie or pants.
-- **/XBee_ELSequencer_ControllerV3** - Code used to arm the master XBee and tell the slave XBees when to begin a sequence depending on the button press.
+- **/XBee_ELSequencerV3** - Code used to read the slave XBee's received character and sequence each dancer's hoodie or pants.
+- **/XBee_ELSequencer_ControllerV3** - Code used to arm the master XBee and tell the slave XBees when to begin a sequence based on the button press.
 
 Documentation
 -------------------
