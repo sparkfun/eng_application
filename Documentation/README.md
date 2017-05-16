@@ -4,7 +4,7 @@ Welcome to Bobby's guide for oral care! Food and bacteria can build up over time
 
 <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Blausen_0863_ToothAnatomy_02.png/800px-Blausen_0863_ToothAnatomy_02.png" title="A Cross Section of a Tooth Containing Its Anatomy" width="50%"></div>
 
-<div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div>
+<font size="-2"><div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div></font>
 
 &nbsp;
 
@@ -66,8 +66,7 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 
 <div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
 
-The American Dental Association provides an excellent demo of [
-How to Brush Your Teeth](https://www.youtube.com/watch?v=xm9c5HAUBpY) on YouTube. 
+The American Dental Association provides an excellent demo of [How to Brush Your Teeth](https://www.youtube.com/watch?v=xm9c5HAUBpY) on YouTube. 
 
 ### Maintaining Your Tools and Cleaning Up
 
