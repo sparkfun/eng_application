@@ -4,7 +4,7 @@ Welcome to Bobby's guide for oral care! Food and bacteria can build up over time
 
 <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Blausen_0863_ToothAnatomy_02.png/800px-Blausen_0863_ToothAnatomy_02.png" title="A Cross Section of a Tooth Containing Its Anatomy" width="50%"></div>
 
-<div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div>
+<i><div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div></i>
 
 &nbsp;
 
@@ -48,7 +48,7 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 
 <div align="center"><img src="http://pad3.whstatic.com/images/thumb/a/a3/Brush-Your-Teeth-Step-7-Version-3.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-7-Version-3.jpg" title="Toothbrush at a 45 Degree Angle for Outer Surface" width="50%"></div>
 
-<div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
+<i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i>
 &nbsp;
 
 2. Brush you teeth gently using one of the brushing motions as explained above.
@@ -56,14 +56,14 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 
 <div align="center"><img src="http://pad1.whstatic.com/images/thumb/1/1e/Brush-Your-Teeth-Step-8-Version-3.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-8-Version-3.jpg" title="Toothbrush Cleaning the Chewing Surface " width="50%"></div>
 
-<div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
+<i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i>
 &nbsp;
 
 4. After the chewing surface on the top row has been cleaned, move the brush further toward your teeth's inner surface while still aiming the bristles at your gum line and teeth. The image below provides an example of how the bristles should be angled to clean the inner surface.
 
 <div align="center"><img src="http://pad1.whstatic.com/images/thumb/5/5c/Brush-Your-Teeth-Step-9-Version-2.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-9-Version-2.jpg" title="Toothbrush Cleaning the Inner Surface" width="50%"></div>
 
-<div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
+<i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i>
 &nbsp;
 
 5. Continue repeating this process for all surfaces of your teeth so that both the top and bottom rows have been cleaned.
