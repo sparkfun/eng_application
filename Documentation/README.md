@@ -36,6 +36,10 @@ Let us start by getting your tools set up.
 5. Using your left hand's index finger and thumb, gently squeeze a pea sized amount on the bristles.
 6. Place the toothpaste aside on a table. 
 
+The image below shows some toothpaste being applied to the toothbrush.
+
+<div align="center"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImageBrushPaste.jpg" title="Toothepaste Being Applied to Toothbrush"></div>
+
 ### Brushing Your Teeth
 
 So how do we brush our teeth? It is recommended to have your toothbrush at a 45° angle toward your gum line and teeth for a minimum of 2 minutes. Typical brushing motions can include sweeping the bristles in a linear motion and/or rolling the brush in a circular motion. With your toothbrush prepared, you can begin to brush your teeth.
