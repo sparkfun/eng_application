@@ -13,7 +13,7 @@ Monday-Friday (~9:30am to ~6pm). On certain days when I teach dance, I leave ear
 
 **3. What is your desired compensation range? Range = (least you are comfortable accepting, max you think you are worth)**
 
-My current salary as a technical support representative (~$42,000 yearly) to about ~$50,000 yearly as a SparkFun engineer.
+My current salary as a technical support representative (~$42,000 yearly) to about ~$50,000 yearly.
 
 **4. SparkFun is a dog-friendly, dog-filled environment. Are you comfortable working around dogs? If you have a dog, would you see yourself bringing your dog to work?**
 
