@@ -1,4 +1,5 @@
-# EL Dance Suit
+EL Dance Suit
+==============
 
 This code will be used to wirelessly control 2x 3 meters of EL Wire attached to each dancer's hoodie and pants
 for a performance with Streetside Studio's bboys/bgirls on May 13th, 2017.
