@@ -39,25 +39,25 @@ The image below shows some toothpaste being applied to the toothbrush.
 
 ### Brushing Your Teeth
 
-So how do we brush our teeth? It is recommended to have your toothbrush at a 45° angle toward your gum line and teeth for a minimum of 2 minutes. Typical brushing motions can include sweeping the bristles in a linear motion and/or rolling the brush in a circular motion. With your toothbrush prepared, you can start brushing your teeth.
+So how do we brush our teeth? It is recommended to have your toothbrush at a 45° angle toward your gum line and teeth. Typical brushing motions can include sweeping the bristles in a linear motion and/or rolling the brush in a circular motion. Make sure to brush your teeth in the morning and at the end of the day. With your toothbrush prepared, you can start brushing your teeth.
 
 1. With the toothbrush still in your dominant hand, place the bristles on your teeth as shown in the image below.
 
-<table><tr><th><div align="center"><a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImagewikiHowOuterSurface.jpg" title="Toothbrush at a 45 Degree Angle for Outer Surface" width="50%"></a></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i></td></tr></table>
+<table><tr><th><div align="center"><a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImagewikiHowOuterSurface.jpg" title="Toothbrush at a 45 Degree Angle for Outer Surface" width="50%"></a></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg">Wikivisual of wikiHow</a> under the<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i></td></tr></table>
 &nbsp;
 
 2. Brush you teeth gently using one of the brushing motions as explained above until top row's outer surface has been cleaned.
 3. Move the brush toward your tongue with the bristles facing the chewing surface and continue brushing the top row. The image below provides an example of how to clean a chewing surface.
 
-<table><tr><th><div align="center"><a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImagewikiHowChewingSurface.jpg" title="Toothbrush Cleaning the Chewing Surface " width="50%"></a></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i></td></tr></table>
+<table><tr><th><div align="center"><a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImagewikiHowChewingSurface.jpg" title="Toothbrush Cleaning the Chewing Surface " width="50%"></a></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg">Wikivisual of wikiHow</a> under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i></td></tr></table>
 &nbsp;
 
 4. Move the brush further toward your teeth's inner surface while still aiming the bristles at your gum line and teeth. The image below provides an example of how the bristles should be angled to clean the inner surface.
 
-<table><tr><th><div align="center"><a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImagewikiHowInnerTeeth.jpg" title="Toothbrush Cleaning the Inner Surface" width="50%"></a></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i></td></tr></table>
+<table><tr><th><div align="center"><a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImagewikiHowInnerTeeth.jpg" title="Toothbrush Cleaning the Inner Surface" width="50%"></a></div></th></tr><tr><td><i><div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg">Wikivisual of wikiHow</a> under the <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div></i></td></tr></table>
 &nbsp;
 
-5. Continue repeating this process for all surfaces of your teeth so that both the top and bottom rows have been cleaned.
+5. Continue repeating this process for all surfaces of your teeth so that both the top and bottom rows have been cleaned for a minimum of about 2 minutes.
 6. To prevent additional bacterial growth in your mouth, brush your tongue gently with the bristles.
 7. Once you have cleaned your teeth, you may rinse out any remaining toothpaste with water. Fill your mouth with some water and swoosh it around to remove any food debris or bacteria that have loosened up.
 8. Spit out any remaining toothpaste from your mouth into the sink. 
@@ -71,7 +71,7 @@ Now that you have successfully cleaned your teeth, you will want to maintain you
 3. Air dry the toothbrush by placing it in your cup. Be sure to have the toothbrush in an upright position with good air flow and avoid having the brush come into contact with a surface.
 4. Close the lid to your toothpaste.
 
-Over time, your toothbrush may lose its effectiveness in cleaning your teeth. It is recommended to replace your toothbrush about every 3 months or until the brush has lost its form. If your toothbrush has bent bristles, it is time to replace your toothbrush. Make sure to also clean out your cup and prevent any thin films from forming at the bottom.
+Over time, your toothbrush may lose its effectiveness in cleaning your teeth. It is recommended to replace your toothbrush about every 3 months or until the brush has lost its original form. If your toothbrush has bent bristles, it is a good indicator that you need to replace your toothbrush. Make sure to also clean out your cup and prevent any thin films from forming at the bottom.
 
 # Resources and Going Further
 
