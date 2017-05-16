@@ -50,7 +50,7 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 8. Spit out any remaining toothpaste from your mouth into the sink. 
 
 The American Dental Association provides an excellent demo of [
-How to Brush Your Teeth](https://www.youtube.com/watch?v=xm9c5HAUBpY) through YouTube. 
+How to Brush Your Teeth](https://www.youtube.com/watch?v=xm9c5HAUBpY) on YouTube. 
 
 ### Maintaining Your Tools and Cleaning Up
 
