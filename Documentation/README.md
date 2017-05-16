@@ -4,7 +4,7 @@ Welcome to Bobby's guide for oral care! Food and bacteria can build up over time
 
 <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Blausen_0863_ToothAnatomy_02.png/800px-Blausen_0863_ToothAnatomy_02.png" title="A Cross Section of a Tooth Containing Its Anatomy" width="50%"></div>
 
-<div align="center">Image Courtesy of [BruceBlaus of WikiMedia Commons](https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png).</div>
+<div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a>.</div>
 
 In this tutorial, you will learn about the basics of brushing your teeth in order to prevent tooth decay.
 
