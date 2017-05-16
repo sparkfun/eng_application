@@ -44,7 +44,7 @@ The image below shows some toothpaste being applied to the toothbrush.
 
 So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â° angle toward your gum line and teeth for a minimum of 2 minutes. Typical brushing motions can include sweeping the bristles in a linear motion and/or rolling the brush in a circular motion. With your toothbrush prepared, you can begin to brush your teeth.
 
-1. With the toothbrush still in your dominant hand, place the bristles on your teeth. We will start with the top row's outer surface located at the back of your mouth as sown in the image below:
+1. With the toothbrush still in your dominant hand, place the bristles on your teeth. We will start with the top row's outer surface located at the back of your mouth as shown in the image below:
 
 <div align="center"><img src="http://pad3.whstatic.com/images/thumb/a/a3/Brush-Your-Teeth-Step-7-Version-3.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-7-Version-3.jpg" title="Toothbrush at a 45 Degree Angle for Outer Surface" width="50%"></div>
 
@@ -59,7 +59,7 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 <div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
 &nbsp;
 
-4. After the chewing surface on the top row has been cleaned, move the brush further toward your teeth's inner surface while still aiming the bristles at your gum line and teeth. The image below shows the 
+4. After the chewing surface on the top row has been cleaned, move the brush further toward your teeth's inner surface while still aiming the bristles at your gum line and teeth. The image below provides an example of how the bristles should be angled to clean the inner surface.
 
 <div align="center"><img src="http://pad1.whstatic.com/images/thumb/5/5c/Brush-Your-Teeth-Step-9-Version-2.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-9-Version-2.jpg" title="Toothbrush Cleaning the Inner Surface" width="50%"></div>
 
