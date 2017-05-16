@@ -75,7 +75,7 @@ Over time, your toothbrush may lose its effectiveness in cleaning your teeth. It
 
 # Resources and Going Further
 
-Brushing your teeth is not the only method of preventing tooth decay. To fight the good fight and protect your teeth, try checking out these additional links by flossing, using mouthwash, and following a nutritious diet:
+Brushing your teeth is not the only method of preventing tooth decay. To fight the good fight and protect your teeth, try checking out these additional links by flossing, using mouthwash, and following a nutritious diet!
 
 * [Colgate: How to Floss](https://www.aquafresh.com/oral-hygiene/dental-hygiene/flossing/)
 
