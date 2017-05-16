@@ -1,23 +1,6 @@
 Models Sample
 ==============
 
-Instructions
-------------
+Contents
 
-Please include a sample model in this folder. 
-
-A model from one of your personal projects is preferred, though anything that demonstrates your ability with one of the following types of programs is acceptable:
-
-* SolidWorks
-* FreeCAD
-* Sketchup
-* Blender
-* Fritzing
-* Illustrator
-* Inkscape
-
-Additional points
-------------------
-
-* The model does not need to be overly complex, if creating one from scratch.
-* This must be your original work. Any partial contributions from others should be attributed. 
+* /Annulus Revised.skp - 3D model of an annulus with the location of thermistors used for my  experimental study of "Thermal Convection Driven by Centrifugal Buoyancy in a Rapidly Rotating Annulus." This model created around 2010 as part of an undergraduate research project with the CU Boulder's Applied Math department and NSF's Mentoring through Critical Transition Points. The device was originally constructed by John Hart and Scott Kittelman to try and model Busse's theory with the convective columns of a Jovian planet.
