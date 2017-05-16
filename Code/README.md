@@ -1,7 +1,7 @@
 # EL Dance Suit
 
 This code will be used to wirelessly control 2x 3 meters of EL Wire attached to each dancer's hoodie and pants
-for a performance with Streetside Studio's bboys/bgirls on May 13th, 2017. Using a wirelss controlled glove, a master XBee will be used to broadcast a signal. Once the slave XBees receive a slave character, the EL Sequencers will toggle each channel based on the programmed sequence.
+for a performance with Streetside Studio's bboys/bgirls on May 13th, 2017.
 
 Code Contents
 -------------------
