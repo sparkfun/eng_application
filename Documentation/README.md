@@ -4,7 +4,7 @@ Welcome to Bobby's guide for oral care! Food and bacteria can build up over time
 
 <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Blausen_0863_ToothAnatomy_02.png/800px-Blausen_0863_ToothAnatomy_02.png" title="A Cross Section of a Tooth Containing Its Anatomy" width="50%"></div>
 
-<p style="font-size:1px"><div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div></p>
+<div align="center">Image Courtesy of <a href="https://commons.wikimedia.org/wiki/File:Blausen_0863_ToothAnatomy_02.png">BruceBlaus of WikiMedia Commons</a> under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en">Creative Commons Attribution 3.0 Unported (CC BY 3.0) License</a>.</div>
 
 &nbsp;
 
@@ -58,11 +58,11 @@ So how do we brush our teeth? It is recommended to have your toothbrush at a 45Â
 
 <div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-7-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
 
-<div align="center"><img src="http://pad1.whstatic.com/images/thumb/1/1e/Brush-Your-Teeth-Step-8-Version-3.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-8-Version-3.jpg" title="Toothbrush Cleaning The Chewing Surface " width="50%"></div>
+<div align="center"><img src="http://pad1.whstatic.com/images/thumb/1/1e/Brush-Your-Teeth-Step-8-Version-3.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-8-Version-3.jpg" title="Toothbrush Cleaning the Chewing Surface " width="50%"></div>
 
 <div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-8-Version-3.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
 
-<div align="center"><img src="http://pad1.whstatic.com/images/thumb/5/5c/Brush-Your-Teeth-Step-9-Version-2.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-9-Version-2.jpg" title="Toothbrush Cleaning The Chewing Surface " width="50%"></div>
+<div align="center"><img src="http://pad1.whstatic.com/images/thumb/5/5c/Brush-Your-Teeth-Step-9-Version-2.jpg/aid30227-v4-900px-Brush-Your-Teeth-Step-9-Version-2.jpg" title="Toothbrush Cleaning the Inner Surface" width="50%"></div>
 
 <div align="center">Image Courtesy of <a href="http://www.wikihow.com/Brush-Your-Teeth#/Image:Brush-Your-Teeth-Step-9-Version-2.jpg">Wikivisual of wikiHow</a> under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0) License</a>.</div>
 
