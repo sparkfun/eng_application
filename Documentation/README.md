@@ -35,7 +35,7 @@ Let us start by getting your tools set up.
 
 The image below shows some toothpaste being applied to the toothbrush.
 
-<div align="center"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImageBrushPaste.jpg" title="Toothepaste Being Applied to Toothbrush" width="50%"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/bboyho/eng_application/master/Documentation/Images/ImageBrushPaste.jpg" title="Toothpaste Being Applied to Toothbrush" width="50%"></div>
 
 ### Brushing Your Teeth
 
