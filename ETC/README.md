@@ -21,6 +21,6 @@ Of course I love dogs! I love seeing puppies and dogs. I do not currently have a
 
 **5. Who is your cultural alter-ego (athlete, artist, author, actor, alien, etc.)?**
 
-I am a bboy (dancer) by heart so you can say that I am an artist. Of course, I try to work on side projects off the clock to keep up with my skills in engineering.
+I am a bboy (dancer) by heart so you can say that I am an artist.
 
 **6. What topics would you like to focus on while working with the engineering team?**
