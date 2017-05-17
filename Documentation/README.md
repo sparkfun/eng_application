@@ -39,7 +39,7 @@ The image below shows some toothpaste being applied to the toothbrush.
 
 ### Brushing Your Teeth
 
-So how do we brush our teeth? It is recommended to have your toothbrush at a 45° angle toward your gum line and teeth. Typical brushing motions can include sweeping the bristles in a linear motion and/or rolling the brush in a circular motion. Make sure to brush your teeth in the morning and at the end of the day. With your toothbrush prepared, you can start brushing your teeth.
+So how do we brush our teeth? It is recommended to have your toothbrush at a 45° angle toward your gum line and teeth. Typical brushing motions can include sweeping the bristles in a linear motion and/or rolling the brush in a circular motion. Make sure to brush your teeth in the morning and at the end of the day. Lets start cleaning using the prepared toothbrush!
 
 1. With the toothbrush still in your dominant hand, place the bristles on your teeth as shown in the image below.
 
