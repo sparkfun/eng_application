@@ -5,7 +5,7 @@ Let us get to know you a bit better. Please answer the following:
 
 **1. When can you start?**
 
-As soon as I am allowed to move to engineering and if necessary, a technical support representative is able to replace my position in the department. 
+As soon as I am allowed to move to engineering and when a technical support representative is able to replace my position in the department. 
 
 **2. What is your ideal weekly schedule?**
 
