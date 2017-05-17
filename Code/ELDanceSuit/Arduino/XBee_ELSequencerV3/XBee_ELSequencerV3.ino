@@ -14,10 +14,11 @@ Modified by Ho Yun Bobby Chan @ SparkFun Electronics May 12th, 2017
  * Blue Clear LED, 330Ohm current limiting resistors, 3x buttons, 
  * a 9V battery, and a 9V adapter.
  *
- * Each of the 7x EL dance suits contain an EL Sequencer, 2x EL Wires, a
+ * Each of the 7x EL dance suits use an EL Sequencer, 2x EL Wires, a
  * 12V EL inverter, XBee female sockets soldered, a 9V battery, 9V adapter,
- * and a XBee Series 1 transceiver.  An XBee Series 2 can be used but the throughput
- * of the Series 1 is much higher. To reduce latency, I recommend using the XBee
+ * and a XBee Series 1 transceiver.  Each EL Sequencer will use this same code.
+ * An XBee Series 2 can be used but the throughput of the Series 1 is 
+ * much higher. To reduce latency, I recommend using the XBee
  * Series 1. The basic configuration of the XBee module with point-to-point configuratin is
  * based on Digi's Example tutorial => https://www.digi.com/blog/xbee/basic-xbee-802-15-4-chat/.
  * Page 5 of the tutorial shows you how to broadcast with
@@ -33,7 +34,7 @@ Modified by Ho Yun Bobby Chan @ SparkFun Electronics May 12th, 2017
  * pin 1 = Tx
  *
  * Note: Make sure to remove the XBee Series 1 on the EL Sequencer when
- * uploading a new sketch file otherwise it will brick the XBee. You can
+ * uploading a new sketch file. Otherwise it will brick the XBee. You can
  * always use the next generation XCTU software to unbrick and recover
  * the transceiver.
  *
@@ -49,7 +50,7 @@ Modified by Ho Yun Bobby Chan @ SparkFun Electronics May 12th, 2017
 char val; //Declare character 'val' when Slave XBee receives a character
 char temp_delete; //used to delete buffer and prevent false triggers when Master XBee sends character more than once
 
-//LED to check if the LED is initialized.
+//LED to check if the board is initialized.
 const int status_LED = 13;
 
 int counter = 0; //adding counter to prevent false triggers for a small period of time
@@ -89,7 +90,8 @@ void setup() {
 /*******************Main Loop***************************/
 void loop() {
   if (XBee_sent == false) {
-    //we have not received a character yet after a certain period of time, we can see if the Master XBee has sent any characters
+    //we have not received a character yet after a certain period of time
+    //lets check to see if the Master XBee has sent any characters recently
     if (Serial.available()) {
       //check if slave XBee is receiving data from master XBee
       val = Serial.read();//save whatever is in the buffer to the variable
