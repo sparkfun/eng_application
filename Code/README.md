@@ -1,8 +1,7 @@
 EL Dance Suit
 ==============
 
-These codes will be used to wirelessly control 2x 3 meters of EL Wire attached to each dancer's hoodie and pants. There are a total of 7 dancers that will be wearing the EL Dance suits and one controller. 8x XBees were configured in a point-to-multipoint network in order.
-This project was for a performance with Streetside Studio's bboys/bgirls on May 13th, 2017. 
+This project was for a performance with Streetside Studio's bboys/bgirls on May 13th, 2017. The codes contained in this repository will be used to wirelessly control 2x 3 meters of EL Wire attached to each dancer's hoodie and pants. There are a total of 7x dancers that will be wearing the EL Dance suits and one controller. 8x XBees were configured in a point-to-multipoint network to trigger the EL Sequencers.
 
 Code Contents
 -------------------
