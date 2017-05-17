@@ -9,6 +9,9 @@ https://github.com/sparkfun/EL_Sequencer
 
 Description:
 This is a sketch for the wireless controller used to control 7x EL dance suits.
+Code used to arm the master XBee and tell the slave XBees when to begin a 
+sequence based on the button press.
+
 The wireless controller consists of a RedBoard Programmed with Arduino,
 XBee Shield, XBee Series 1 transceiver, diffused RGB Common Cathode LED,
 Blue Clear LED, 330Ohm current limiting resistors, a button, 9V battery,
@@ -32,7 +35,7 @@ The corresponding EL Sequencer will receive the character and control
 the EL component on a channel that is associated with that character.
 
 Using a RedBoard programmed with Arduino, the XBee transceiver is connected to the
-Software Serial pins. By pushing the button, the Arduino will
+Software Serial pins. With a button press, the Arduino will
 send one character through the XBee. Logic is used to control
 how many characters are sent with the push button. The Arduino
 will not send another character until the button is pressed again.
