@@ -37,11 +37,6 @@ send one character through the XBee. Logic is used to control
 how many characters are sent with the push button. The Arduino
 will not send another character until the button is pressed again.
 
-Note: This section of the code can be optimized. As the user is not
-pressing down on the button, logic can be added so that the XBee is
-not continuously sending serial characters to the receiving
-EL Sequencer when idle.
-
 Development environment specifics:
 Arduino 1.6.5
 
