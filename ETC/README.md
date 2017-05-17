@@ -24,6 +24,7 @@ Of course I love dogs! I love seeing puppies and dogs. I do not currently have a
 I am a bboy (dancer) by heart so you can say that I am an artist.
 
 **6. What topics would you like to focus on while working with the engineering team?**
+
 While our tutorials and documentation has been great, I personally feel like it does not cover all aspects of a product when they are being used in the field. Whenever issues came up, I noticed that we did not have a smooth method of relaying solutions between customers and each technical support representative. The issues tab in Sparkle is great but it is not useful in sharing public information to the customer. I decided try create "tech support tips/troubleshooting/common issues" in the comments section for certain products and unify documentation on the public facing side. The hope was for customers to search for this information and save time whenever a technical support representative handled the same case. Maybe we can start having sections in tutorials for common problems that may arise or start utilizing the tech tips section.
 
 I would also like to continue working with tech support and all the other departments to relay information with our products to the best of my ability. Communication has improved with the Go Live Dashboard but it feels like the support department is left in the dark with certain releases. This can include new products coming down the pipeline, documentation, resources, project tutorials, 3D models, Fritzing diagrams, problem products, tech support feedback, and product reviews. 
