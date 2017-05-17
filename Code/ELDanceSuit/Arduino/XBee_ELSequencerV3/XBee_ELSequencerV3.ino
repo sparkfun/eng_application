@@ -9,8 +9,10 @@ Modified by Ho Yun Bobby Chan @ SparkFun Electronics May 12th, 2017
  *
  * Description:
  * This is a modified sketch for the EL Sequencer with a wireless controller.
+ * Code used to read the slave XBee's received character and sequence each dancer's hoodie or pants.
+ *
  * The wireless controller consists of a RedBoard Programmed with Arduino,
- * XBee Explorer, XBee Series 1 transceiver, diffused RGB Common Cathode LED,
+ * XBee Shield, XBee Series 1 transceiver, diffused RGB Common Cathode LED,
  * Blue Clear LED, 330Ohm current limiting resistors, 3x buttons, 
  * a 9V battery, and a 9V adapter.
  *
