@@ -1,7 +1,7 @@
-SparkFun Engineering Assistant Application
+SparkFun Quality Assurance Specialist Application
 ============================================
 
-This repository is used to vet candidates for the Engineering Assistant position.
+This repository is used to vet candidates for the Quality Assurance Specialist Application
 
 Users will demonstrate basic version control skills, and provide code, writing, and project samples.
 
@@ -13,7 +13,7 @@ How to use this repository
 3. Send a pull request back to SparkFun.
 
 Note that pull requests can either be sent back to the main repository or you can create a branch on your fork and create a pull request into master on your fork. 
-The latter method requires that you contact the hiring manager of the Engineering Assistant position with a link to your pull request, and affords you as an applicant some degree of anonymity.
+**The latter method requires that you contact the hiring manager of the position with a link to your pull request, and affords you as an applicant some degree of anonymity.**
 
 What Happens To Your Pull Request
 ----------------------------------
@@ -42,20 +42,9 @@ Our customers include inventors, artists, students, hobbyists, and just plain cu
 SparkFun is also very committed to bringing electronics education into the mainstream by curating free educational materials and working with schools and institutions around the country to bring electronics into the classroom. 
 Lastly, SparkFun is a staunch advocate of the open source movement, most recently being a leader in Open Source Hardware.
 
-About the Engineering Department
---------------------------------
-The engineering department designs open-source electronics for SparkFun. 
-We also create the code and supporting documentation to enable our customers to create, hack, and explore the great wide world of embedded electronics. 
-
-Various tasks include:
-
-* Writing tutorials
-* Creating demo projects
-* Writing basic code examples for products
-* Writing code libraries for products
-* Designing 3D models or circuit diagrams for products
-* Revisions of older products
-* Maintaining and updating documentation and code
+About the Position
+------------------
+Please see the included position.md file for the job posting.
 
 License Information
 -------------------
