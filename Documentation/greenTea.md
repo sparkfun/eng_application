@@ -1,6 +1,6 @@
 # Making Green Tea
 
-Most people have made a cup of tea in their lives, and guessing through the process will probably give you a good cup of tea. 
+Most people have made a cup of tea in their lives, and approximating the method usually produces a good cup of tea. 
 
 However, sometimes a little specificity is good: green tea can become bitter if brewed with overly hot water. Follow these directions to brew a delicious cup.
 
@@ -20,7 +20,7 @@ However, sometimes a little specificity is good: green tea can become bitter if 
 
 1. **Prepare your cup**
 
-    Place your tea leaves in the cup. If you have a teabag, simply lay the teabag into the cup with the string and tag outside of the cup (see picture). If your tea is loose leaf, use the strainer as it directs you and fill it with about 1 tbsp. of tea leaves.
+    Place your tea leaves in the cup. If you have a teabag, simply lay the teabag into the cup with the string and tag outside of the cup (see picture). If your tea is loose leaf, use the strainer as directed and fill it with about 1 tbsp. of tea leaves.
 
     ![Prepare](./step1s.png "The tea awaits")
     
@@ -32,7 +32,7 @@ However, sometimes a little specificity is good: green tea can become bitter if 
 
 3. **Pour the water and steep**
 
-    Once your water is about the right temperature, pour the water into the cup with the tea leaves. Then, try to patient as it brews! This takes two  minutes. If you're feeling scientific, break out the timer -- but approximation will suffice.
+    Once the water is about the right temperature, pour the water into the cup with the tea leaves. Then try to be patient as it brews! This takes two minutes. If you're feeling scientific, break out the timer -- but approximation will suffice.
    
    	![Pour Water](./step3s.png "This only takes a minute")
    
@@ -48,4 +48,4 @@ However, sometimes a little specificity is good: green tea can become bitter if 
 
 Brewing time and amount of leaves will vary to taste, but brewing temperature is less flexible. 
 
-You can 're-infuse' your tea by introducing the leaves again a little later for the same amount of time. Depending on the tea, it can lead to some very complex flavors.
+You can 're-infuse' your tea by introducing the leaves again a little later for the same amount of time. This can make the flavor deeper and more complex!
