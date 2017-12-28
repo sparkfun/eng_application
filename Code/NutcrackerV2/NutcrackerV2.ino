@@ -2,7 +2,7 @@
  *  This is a quick holiday build using a Teensy 3.6,
  *  Teensy Sound Board, and 4 solenoid circuits to control
  *  the mouths of 4 nutcrackers. Each solenoid is controlled
- *  by the audio output from the Teensy Ausio Board - 2
+ *  by the audio output from the Teensy Audio Board - 2
  *  channels, left and right from each channel.
  *  Rob Reynolds, 2017, released under the Beerware License.
  */

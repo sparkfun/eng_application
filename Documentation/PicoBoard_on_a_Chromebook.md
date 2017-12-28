@@ -6,9 +6,10 @@ Getting hardware to run from Scratch on a Chromebook has been difficult. Let us 
 
 A brief history
 ------------------
-When the Chromebook was first released in 2011, the initial response was skeptical. Only a year later, schools had become their largest category of customer. School administrators and educators loved the low price point, ease of use, and simple connection to the world wide web for their students. The Chromebook’s place in the school system was solidified in 2014 with the introduction of [Google Classroom](https://edu.google.com/k-12-solutions/classroom/), which allowed teachers to create a central repository for student assignments, grades, and communication, not just with students, but with parents as well.
+When the Chromebook was first released in 2011, the initial response was skeptical. Only a year later, schools had become their largest category of customer. School administrators and educators loved the low price point, ease of use, and simple connection to the world wide web for their students. Chromebook saw a nice boost in 2013, when the [MIT Media Lab](https://www.media.mit.edu/) released [Scratch 2.0](https://scratch.mit.edu/), their visual programming language aimed at kids between the ages of 8 and 16. Unlike its initial release, this version allowed users to create projects directly in their web browsers. It was a perfect pairing, and has given millions of kids a solid introduction to the world of coding.
 
-Chromebook also saw a nice boost in 2013, when the [MIT Media Lab](https://www.media.mit.edu/) released [Scratch 2.0](https://scratch.mit.edu/), their visual programming language aimed at kids between the ages of 8 and 16. Unlike its initial release, this version allowed users to create projects directly in their web browsers. It was a perfect pairing, and has given millions of kids a solid introduction to the world of coding.
+The Chromebook’s place in the school system was solidified in 2014 with the introduction of [Google Classroom](https://edu.google.com/k-12-solutions/classroom/), which allowed teachers to create a central repository for student assignments, grades, and communication, not just with students, but with parents as well.
+
 
 Hard times for hardware
 -------------------------------
