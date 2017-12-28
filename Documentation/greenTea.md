@@ -50,3 +50,5 @@ However, sometimes a little specificity is good: green tea can become bitter if 
 Brewing time and amount of leaves will vary to taste, but brewing temperature is less flexible. 
 
 You can 're-infuse' your tea later by steeping the leaves again for the same amount of time. This can make the flavor deeper and more complex!
+
+*All images by Adam Siefkas, and licensed under [Creative Commons](https://creativecommons.org/licenses/by/2.0/)*
