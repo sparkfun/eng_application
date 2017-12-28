@@ -2,7 +2,7 @@ How to ~~Fold~~ Roll a Shirt
 ====================
 Introduction
 -----------------
-I learned the technique for rolling my shirts described below on [Instructables.com](http://www.instructables.com/ "Instructables") (if you search for "ranger roll" you'll find a few variations).  It's excellent for travel, as it enables you to more efficiently use the precious space in your suitcase.  I have taken to using it when storing my clothes at home, though there are some drawbacks to doing so.
+This technique was inspired by guides posted on [Instructables.com](http://www.instructables.com/ "Instructables") (if you search for "ranger roll" you'll find a few variations).  It's excellent for travel, as it enables you to more efficiently use the precious space in your suitcase.  It can be used to store clothese at home, though there are some drawbacks to doing so which will be explained later.
 
 Preparation
 -----------
@@ -17,7 +17,7 @@ Turn the bottom 3 inches or so of the shirt inside out and fold it back on itsel
 ![alt text](02.JPG "Hem folded back")
 *photo by Sam Wizer*
 
-You'll want to fold the whole bottom part of the shirt back on itself to make sure that the fold is straight in the back as well.  
+To make sure that the fold is straight in the back, fold the bottom of the shirt away from you.
 ![alt text](03.JPG "Adjusting the hem fold")
 *photo by Sam Wizer*
 
@@ -53,7 +53,7 @@ Beginning at the neck, roll the shirt towards the hem, making it as tight as pos
 
 Tuck
 ------
-When you get to the end, roll the fold of the hem back over the roll.  This will keep your shirt from unrolling.
+When you get to the end, pull  the fold of the hem back over the roll.  This will keep your shirt from unrolling.
 ![alt text](11.JPG "The final tuck")
 *photo by Sam Wizer*
 
