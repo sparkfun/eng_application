@@ -1,20 +1,9 @@
 Code Sample
 ============
 
-Instructions
--------------
+The Singing Nutcrackers
+-----------------------
 
-In this folder, please include a representative code sample.
+Included in this folder is the Arduino code I used for my Singing Nutcracker project. The project uses four Christmas Nutcrackers, the [Teensy 3.6](https://www.sparkfun.com/products/14057), the [Teensy Audio Board](https://www.sparkfun.com/products/12767), and the brilliant [Teensy Audio System Design Tool](https://www.pjrc.com/teensy/gui/). It allows independant control of four separate solenoid circuits to control each of the Nutcracker's mouths individually, based on audio output from each channel. 
 
-Code samples from one of your personal projects is preferred, though the following features are what we are looking for:
 
-* Clean, consistently formatted code.
-* Documented well enough for a stranger to use/understand your code. 
-* Licensed and attributed properly (as applicable). 
-
-Additional points
-------------------
-
-* Samples will be read, not executed.  
-* Less is more
-* This must be your original work. Any partial contributions from others should be attributed. 
