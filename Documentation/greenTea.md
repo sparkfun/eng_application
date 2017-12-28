@@ -26,7 +26,7 @@ However, sometimes a little specificity is good: green tea can become bitter if 
     
 2. **Heat the water and let it cool**
     
-       Heat the water to boiling. This can be done with a stovetop kettle, electric kettle, or even on a microwave with a suitable vessel. Once the water has boiled, let it cool! To be precise, it should be 185&deg;F or 85&deg;C for green tea (this is different for other tea varieties). Use a thermometer if you want, or simply wait about two minutes.
+     Heat the water to boiling. This can be done with a stovetop kettle, electric kettle, or even on a microwave with a suitable vessel. Once the water has boiled, let it cool! To be precise, it should be 185&deg;F or 85&deg;C for green tea (this is different for other tea varieties). Use a thermometer if you want, or simply wait about two minutes.
     
     ![Heated Water](./step2s.png "I was feeling scientific")
 
