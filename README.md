@@ -3,6 +3,12 @@ SparkFun Quality Assurance Specialist Application
 The Rob Reynolds Edition
 ------------------------
 
+I just wanted to say a quick thank you for your time and consideration. I truly appreciate it.
+We now return you to your regularly scheduled README file.
+
+
+----------------------------
+
 This repository is used to vet candidates for the Quality Assurance Specialist Application
 
 Users will demonstrate basic version control skills, and provide code, writing, and project samples.
