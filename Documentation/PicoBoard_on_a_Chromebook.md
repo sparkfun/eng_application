@@ -2,11 +2,13 @@ Picoboard on a Chromebook!
 ==========================
 Getting hardware to run from Scratch on a Chromebook has been difficult. Let us make it a little easier for you.
 
+<img src="https://user-images.githubusercontent.com/3188387/34403572-405cef9c-eb66-11e7-8e2f-cd2b49cd81fa.jpg" alt="PB + CB TLF" width="800" />
+
 A brief history
 ------------------
 When the Chromebook was first released in 2011, the initial response was skeptical. Only a year later, schools had become their largest category of customer. School administrators and educators loved the low price point, ease of use, and simple connection to the world wide web for their students. The Chromebook’s place in the school system was solidified in 2014 with the introduction of [Google Classroom](https://edu.google.com/k-12-solutions/classroom/), which allowed teachers to create a central repository for student assignments, grades, and communication, not just with students, but with parents as well.
 
-Chromebook also saw a nice boost in 2013, when the [MIT Media Lab](https://www.media.mit.edu/) released (Scratch 2.0](https://scratch.mit.edu/), their visual programming language aimed at kids between the ages of 8 and 16. Unlike its initial release, this version allowed users to create projects directly in their web browsers. It was a perfect pairing, and has given millions of kids a solid introduction to the world of coding.
+Chromebook also saw a nice boost in 2013, when the [MIT Media Lab](https://www.media.mit.edu/) released [Scratch 2.0](https://scratch.mit.edu/), their visual programming language aimed at kids between the ages of 8 and 16. Unlike its initial release, this version allowed users to create projects directly in their web browsers. It was a perfect pairing, and has given millions of kids a solid introduction to the world of coding.
 
 Hard times for hardware
 -------------------------------
@@ -46,4 +48,4 @@ Open up your browser, and navigate to the [Scratch Editor](https://scratch.mit.e
 <img src="https://user-images.githubusercontent.com/3188387/34402755-0f06ea92-eb61-11e7-8076-65d2ec3d9d9d.jpg" alt="PicoBoard Connected" width="700" />
 
 
-A side note: Even though under Add Extension, Picoboard is an option, it doesn't seem to work, as there is a missing browser plugin that I don't believe exists for the ChromeOS.
+A couple of side notes: Because the PicoBoard is running through the S2Bot app before getting to Scratch, there may be a slight lag, or you may find the response a little stilted or jerky. Also, even though, under Add Extension, Picoboard is an option, it doesn't seem to work, as there is a missing browser plugin that I don't believe exists for the ChromeOS.
