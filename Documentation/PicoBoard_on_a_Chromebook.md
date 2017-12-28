@@ -25,7 +25,7 @@ Next, you’ll install the Scratch Device Plugin Helper, from the Chrome Web Store
 Here is where the juggling happens. In order for the Chromebook to fully recognize and communicate with the PicoBoard, the actual communication is going to take place through the S2Bot app. 
 To start with, Plug your PicoBoard into one of the USB ports on your computer. Next, open the S2Bot app. From the dropdown menu in the upper left, choose Picoboard.
  
-![S2Bot Choose Board](https://user-images.githubusercontent.com/3188387/34400540-aa7277c4-eb4f-11e7-9738-f72f59201aca.jpg)
+![S2Bot Choose Board](https://user-images.githubusercontent.com/3188387/34400540-aa7277c4-eb4f-11e7-9738-f72f59201aca.jpg =300x)
 
 Hit the “Scan for Devices” button, and you should get ttyUSB0. While this may seem counterintuitive to Windows users, this is the port you want to select. Hit connect, and you should should be connected. 
 
