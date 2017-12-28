@@ -1,5 +1,7 @@
 SparkFun Quality Assurance Specialist Application
 ============================================
+The Rob Reynolds Edition
+------------------------
 
 This repository is used to vet candidates for the Quality Assurance Specialist Application
 
