@@ -22,9 +22,10 @@ There does exist a workaround that will, in fact, allow the Picoboard to work wi
 ### First Step - installing apps and extensions
 To begin, head over to the Picaxe site’s [Scratch Helper Apps page](http://www.picaxe.com/Teaching/Other-Software/Scratch-Helper-Apps), and download the S2Bot App for Linux xx-bit (zip) (depending on your system, 32- or 65-bit). Note that the link is approximately 60% of the way down the page, so don’t worry if you don’t see it right away. Follow the installation instructions, and get the S2Bot app installed on your Chromebook.
 
+Next, you’ll install the Scratch Device Plugin Helper, from the Chrome Web Store. Once again, the instructions are quite straightforward. Simply click on the + Add to Chrome button in the upper right hand corner of the Scratch Device Helper Plugin window, and Bob’s your Uncle.
+
 <img src="https://user-images.githubusercontent.com/3188387/34402506-2ff4afd4-eb5f-11e7-8369-44b31a5dc8b1.jpg" alt="Plugin Helper" width="600" />
 
-Next, you’ll install the Scratch Device Plugin Helper, from the Chrome Web Store. Once again, the instructions are quite straightforward. Simply click on the + Add to Chrome button in the upper right hand corner of the Scratch Device Helper Plugin window, and Bob’s your Uncle.
 
 ### The Intermediary Steps
 Here is where the juggling happens. In order for the Chromebook to fully recognize and communicate with the PicoBoard, the actual communication is going to take place through the S2Bot app. 
