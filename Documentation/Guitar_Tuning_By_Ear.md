@@ -1,6 +1,7 @@
 Guitar Tuning By Ear
 ================
-This is a basic guide for getting started with tuning your guitar by ear. It assumes that you have experience tuning a guitar with an electronic tuner, and that you know the basics of guitar playing.
+**Assumptions**
+ > This is a basic guide for getting started with tuning your guitar by ear. It assumes that you have experience tuning a guitar with an electronic tuner, and that you know the basics of guitar playing.
 
 The Gist
 -----------
@@ -20,7 +21,7 @@ If you have no other source to tune to, you can always tune relative to your low
 You can use the 5th-fret on the lower string to produce the next string's note (4th-fret in case of the G and B-strings). You can also use the harmonic over the 5th fret on the lower string to produce the harmonic over the 7th fret on the higher string (again, except for the G and B-strings). Also consider simply playing a string open with its neighbor and listening for the chord to become in-tune.
 
 ### 2. De-tune your string slightly
-It is easier to tune *up* to your target note than it is to tune down. 
+It is easier to tune *up* to your target note than it is to tune down. So, the first thing you should do is tune down a little bit.
 
 This is more a matter of mechanics than anything else. Tuning up keeps a smooth amount of tension on the tuning mechanism which allows you to have finer control. This also will keep your string in tune longer since it shores up the slop in-between the gears which might otherwise give-way after a short amount of playing.
 
