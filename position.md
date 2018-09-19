@@ -7,7 +7,9 @@ The mission of the Quality Assurance team in the Product Development (Product De
 
 About SparkFun's Next Quality Assurance Specialist
 ---------------------------------------------------
-The Quality Assurance Specialist closely works with the Support department to collect customer feedback on products, and filter the information as necessary to the Product Development department and Engineering department to inform and shape future products. This position is also an agent of change and updates any and all product offerings as needed to ensure customers receive a high-quality product. 
+The Quality Assurance Specialist closely works with the Support department to collect customer feedback on products, and filter the information as necessary to the Product Development department and Engineering department to inform and shape future products. This position is also an agent of change and updates any and all product offerings as needed to ensure customers receive a high-quality product.
+
+SparkFun's next Quality Assurance Specialist's name is Matthew Lind.
 
 
 Essential Job Functions:
@@ -39,11 +41,11 @@ Process Documentation:
 
 **Product Evaluation for Current Products & Vetting Products**
 
-Current Products:    
+Current Products:
 * Evaluate products at 6, 12, and 18 months to determine if revisions to the product, the documentation, or the code as necessary.
 * Gather feedback from Support teams and customers regarding potential issues or improvements and communicate these or fix issues as necessary
 
-Vetting Products:   
+Vetting Products:
 * Vet potential new products for the Product R&D team
 * Recommend whether a product is viable as a potential SparkFun product or accessory
 
