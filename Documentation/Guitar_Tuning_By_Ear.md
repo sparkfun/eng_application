@@ -42,7 +42,7 @@ Once you've gone through each string, make sure that the strings sound good toge
 
 Motivation
 --------------
- >*Why bother tuning by ear when I have a perfect electronic tuner*
+ >*Why bother tuning by ear when I have a perfect electronic tuner?*
 
 Good question. 
 There's two reasons: it is practical, and it makes you a better musician.
