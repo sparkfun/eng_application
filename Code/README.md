@@ -15,6 +15,6 @@ Code samples from one of your personal projects is preferred, though the followi
 Additional points
 ------------------
 
-* Samples will be read, not executed.  
+* Samples will be read, not executed.
 * Less is more
 * This must be your original work. Any partial contributions from others should be attributed. 

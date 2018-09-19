@@ -2,6 +2,10 @@
 ## SparkFun Useful stuff
 #################
 
+## Emacs Temp Files
+*~
+\#*\#
+
 ## AVR Development
 *.eep
 *.elf
